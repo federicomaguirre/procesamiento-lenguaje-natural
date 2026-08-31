@@ -1,0 +1,199 @@
+2026-08-31 17:45:42,314 [INFO] === INICIANDO PROCESO DE EXTRACCIÓN ===
+2026-08-31 17:45:42,314 [INFO] Configuración: Límite de libros=50, Semilla aleatoria=42
+2026-08-31 17:45:42,871 [INFO] Iniciando navegador Chromium...
+2026-08-31 17:45:44,324 [INFO] Fase 1: Recopilando URLs de libros desde la categoría: https://ww3.lectulandia.co/genero/clasico/
+2026-08-31 17:45:44,509 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/
+2026-08-31 17:45:49,707 [INFO] Encontrados 25 libros nuevos en la página 1. Total acumulado: 25
+2026-08-31 17:45:49,767 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/2/
+2026-08-31 17:45:51,358 [INFO] Encontrados 24 libros nuevos en la página 2. Total acumulado: 49
+2026-08-31 17:45:51,359 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/3/
+2026-08-31 17:45:53,454 [INFO] Encontrados 24 libros nuevos en la página 3. Total acumulado: 73
+2026-08-31 17:45:53,454 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/4/
+2026-08-31 17:45:55,219 [INFO] Encontrados 24 libros nuevos en la página 4. Total acumulado: 97
+2026-08-31 17:45:55,220 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/5/
+2026-08-31 17:45:57,423 [INFO] Encontrados 24 libros nuevos en la página 5. Total acumulado: 121
+2026-08-31 17:45:57,423 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/6/
+2026-08-31 17:45:59,583 [INFO] Encontrados 24 libros nuevos en la página 6. Total acumulado: 145
+2026-08-31 17:45:59,583 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/7/
+2026-08-31 17:46:02,132 [INFO] Encontrados 24 libros nuevos en la página 7. Total acumulado: 169
+2026-08-31 17:46:02,133 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/8/
+2026-08-31 17:46:03,719 [INFO] Encontrados 24 libros nuevos en la página 8. Total acumulado: 193
+2026-08-31 17:46:03,720 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/9/
+2026-08-31 17:46:05,694 [INFO] Encontrados 24 libros nuevos en la página 9. Total acumulado: 217
+2026-08-31 17:46:05,694 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/10/
+2026-08-31 17:46:07,397 [INFO] Encontrados 24 libros nuevos en la página 10. Total acumulado: 241
+2026-08-31 17:46:07,398 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/11/
+2026-08-31 17:46:09,063 [INFO] Encontrados 24 libros nuevos en la página 11. Total acumulado: 265
+2026-08-31 17:46:09,063 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/12/
+2026-08-31 17:46:11,250 [INFO] Encontrados 24 libros nuevos en la página 12. Total acumulado: 289
+2026-08-31 17:46:11,251 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/13/
+2026-08-31 17:46:13,220 [INFO] Encontrados 24 libros nuevos en la página 13. Total acumulado: 313
+2026-08-31 17:46:13,220 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/14/
+2026-08-31 17:46:15,630 [INFO] Encontrados 24 libros nuevos en la página 14. Total acumulado: 337
+2026-08-31 17:46:15,630 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/15/
+2026-08-31 17:46:18,024 [INFO] Encontrados 24 libros nuevos en la página 15. Total acumulado: 361
+2026-08-31 17:46:18,024 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/16/
+2026-08-31 17:46:19,987 [INFO] Encontrados 14 libros nuevos en la página 16. Total acumulado: 375
+2026-08-31 17:46:19,987 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/17/
+2026-08-31 17:46:20,731 [INFO] Fin del catálogo detectado en la página 17 (Error 404 esperado).
+2026-08-31 17:46:20,747 [INFO] Universo total recopilado: 375 libros disponibles.
+2026-08-31 17:46:20,748 [INFO] Seleccionando aleatoriamente 50 libros únicos (Semilla 42)...
+2026-08-31 17:46:20,748 [INFO] Progreso: [1/50]
+2026-08-31 17:46:20,749 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-legado-de-cain/
+2026-08-31 17:46:23,682 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Wilkie Collins
+2026-08-31 17:46:23,711 [INFO] Progreso: [2/50]
+2026-08-31 17:46:23,711 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/veinte-anos-despues/
+2026-08-31 17:46:28,722 [INFO] Éxito: Se extrajo '' por Miguel Lago, Teo Palacios, Karl von Vereiter, Cristina Prada, Jesús Valero, Christopher Buehlman, Alexandre Dumas, Baroness Emmuska Orczy, Baroness Emmuska Orczy, Alexandre Dumas, Miguel Lago, Xosé Miranda, Alexandre Dumas
+2026-08-31 17:46:28,737 [INFO] Progreso: [3/50]
+2026-08-31 17:46:28,737 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/gerona/
+2026-08-31 17:46:32,610 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Benito Pérez Galdós
+2026-08-31 17:46:32,626 [INFO] Progreso: [4/50]
+2026-08-31 17:46:32,626 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/electra/
+2026-08-31 17:46:35,938 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Sófocles
+2026-08-31 17:46:35,953 [INFO] Progreso: [5/50]
+2026-08-31 17:46:35,953 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/por-el-camino-de-swann/
+2026-08-31 17:46:38,678 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Marcel Proust
+2026-08-31 17:46:38,692 [INFO] Progreso: [6/50]
+2026-08-31 17:46:38,692 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/cuentos-dispersos/
+2026-08-31 17:46:42,304 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Horacio Quiroga
+2026-08-31 17:46:42,319 [INFO] Progreso: [7/50]
+2026-08-31 17:46:42,320 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/nuestra-senora-de-paris/
+2026-08-31 17:46:45,030 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Víctor Hugo
+2026-08-31 17:46:45,045 [INFO] Progreso: [8/50]
+2026-08-31 17:46:45,047 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/doble-engano/
+2026-08-31 17:46:48,661 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Wilkie Collins
+2026-08-31 17:46:48,675 [INFO] Progreso: [9/50]
+2026-08-31 17:46:48,676 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/edipo-en-colono/
+2026-08-31 17:46:53,048 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Sófocles
+2026-08-31 17:46:53,063 [INFO] Progreso: [10/50]
+2026-08-31 17:46:53,064 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-extrano-caso-del-dr-jekyll-y-mr-hyde/
+2026-08-31 17:46:56,540 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Robert Louis Stevenson
+2026-08-31 17:46:56,556 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 7.78 segundos...
+2026-08-31 17:47:04,342 [INFO] Progreso: [11/50]
+2026-08-31 17:47:04,343 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-muerte-de-ivan-ilich/
+2026-08-31 17:47:08,137 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, León Tolstói
+2026-08-31 17:47:08,152 [INFO] Progreso: [12/50]
+2026-08-31 17:47:08,154 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-sabueso-de-los-baskerville/
+2026-08-31 17:47:11,971 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Arthur Conan Doyle
+2026-08-31 17:47:11,985 [INFO] Progreso: [13/50]
+2026-08-31 17:47:11,986 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/dersu-uzala/
+2026-08-31 17:47:15,694 [INFO] Éxito: Se extrajo '' por Teo Palacios, Karl von Vereiter, Cristina Prada, Jesús Valero, Christopher Buehlman, Alexandre Dumas, Baroness Emmuska Orczy, Baroness Emmuska Orczy, Alexandre Dumas, Miguel Lago, Xosé Miranda, Bárbara Montes, Juan Gómez-Jurado, Vladimir Arseniev
+2026-08-31 17:47:15,710 [INFO] Progreso: [14/50]
+2026-08-31 17:47:15,713 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/pequeno-hombre-y-ahora-que/
+2026-08-31 17:47:18,328 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Hans Fallada
+2026-08-31 17:47:18,343 [INFO] Progreso: [15/50]
+2026-08-31 17:47:18,344 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/papa-goriot/
+2026-08-31 17:47:20,558 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Honoré de Balzac
+2026-08-31 17:47:20,572 [INFO] Progreso: [16/50]
+2026-08-31 17:47:20,573 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/grandes-esperanzas/
+2026-08-31 17:47:23,483 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Charles Dickens
+2026-08-31 17:47:23,498 [INFO] Progreso: [17/50]
+2026-08-31 17:47:23,500 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/soy-un-gato/
+2026-08-31 17:47:26,792 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Natsume Söseki
+2026-08-31 17:47:26,814 [INFO] Progreso: [18/50]
+2026-08-31 17:47:26,816 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/fortunata-y-jacinta/
+2026-08-31 17:47:30,307 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Benito Pérez Galdós
+2026-08-31 17:47:30,329 [INFO] Progreso: [19/50]
+2026-08-31 17:47:30,331 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/un-manual-de-vida/
+2026-08-31 17:47:34,909 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Epicteto
+2026-08-31 17:47:34,927 [INFO] Progreso: [20/50]
+2026-08-31 17:47:34,929 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-vizconde-de-bragelonne/
+2026-08-31 17:47:38,890 [INFO] Éxito: Se extrajo '' por Teo Palacios, Karl von Vereiter, Cristina Prada, Jesús Valero, Christopher Buehlman, Alexandre Dumas, Baroness Emmuska Orczy, Baroness Emmuska Orczy, Alexandre Dumas, Miguel Lago, Xosé Miranda, Bárbara Montes, Juan Gómez-Jurado, Alexandre Dumas
+2026-08-31 17:47:38,905 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 6.57 segundos...
+2026-08-31 17:47:45,479 [INFO] Progreso: [21/50]
+2026-08-31 17:47:45,480 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-hombre-de-la-mascara-de-hierro/
+2026-08-31 17:47:49,613 [INFO] Éxito: Se extrajo '' por Miguel Lago, Teo Palacios, Karl von Vereiter, Cristina Prada, Jesús Valero, Christopher Buehlman, Alexandre Dumas, Baroness Emmuska Orczy, Baroness Emmuska Orczy, Alexandre Dumas, Miguel Lago, Xosé Miranda, Alexandre Dumas
+2026-08-31 17:47:49,639 [INFO] Progreso: [22/50]
+2026-08-31 17:47:49,639 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/callejon-sin-salida/
+2026-08-31 17:47:52,592 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Charles Dickens, Wilkie Collins
+2026-08-31 17:47:52,608 [INFO] Progreso: [23/50]
+2026-08-31 17:47:52,608 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-salvaje-y-otros-cuentos/
+2026-08-31 17:47:56,621 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Horacio Quiroga
+2026-08-31 17:47:56,638 [INFO] Progreso: [24/50]
+2026-08-31 17:47:56,640 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/criton-trad-gredos/
+2026-08-31 17:47:59,830 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Platón
+2026-08-31 17:47:59,881 [INFO] Progreso: [25/50]
+2026-08-31 17:47:59,915 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-elogio-de-la-sombra/
+2026-08-31 17:48:03,130 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Junichirô Tanizaki
+2026-08-31 17:48:03,145 [INFO] Progreso: [26/50]
+2026-08-31 17:48:03,146 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/yerma/
+2026-08-31 17:48:05,995 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Federico García Lorca
+2026-08-31 17:48:06,009 [INFO] Progreso: [27/50]
+2026-08-31 17:48:06,010 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-dama-de-las-camelias/
+2026-08-31 17:48:09,311 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Alexandre Dumas (hijo)
+2026-08-31 17:48:09,328 [INFO] Progreso: [28/50]
+2026-08-31 17:48:09,328 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-educacion-sentimental/
+2026-08-31 17:48:11,991 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Gustave Flaubert
+2026-08-31 17:48:12,009 [INFO] Progreso: [29/50]
+2026-08-31 17:48:12,010 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/kokoro/
+2026-08-31 17:48:15,417 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Natsume Söseki
+2026-08-31 17:48:15,440 [INFO] Progreso: [30/50]
+2026-08-31 17:48:15,442 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/confesiones/
+2026-08-31 17:48:19,468 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, San Agustín
+2026-08-31 17:48:19,488 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 7.00 segundos...
+2026-08-31 17:48:26,488 [INFO] Progreso: [31/50]
+2026-08-31 17:48:26,489 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-doze-trabajos-de-hercules/
+2026-08-31 17:48:29,246 [INFO] Éxito: Se extrajo '' por Teo Palacios, Karl von Vereiter, Cristina Prada, Jesús Valero, Christopher Buehlman, Alexandre Dumas, Baroness Emmuska Orczy, Baroness Emmuska Orczy, Alexandre Dumas, Miguel Lago, Xosé Miranda, Bárbara Montes, Juan Gómez-Jurado, Enrique de Villena
+2026-08-31 17:48:29,265 [INFO] Progreso: [32/50]
+2026-08-31 17:48:29,265 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-veleta-de-gastizar/
+2026-08-31 17:48:33,778 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Pío Baroja
+2026-08-31 17:48:33,799 [INFO] Progreso: [33/50]
+2026-08-31 17:48:33,800 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/bambu/
+2026-08-31 17:48:37,291 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Pearl S. Buck
+2026-08-31 17:48:37,309 [INFO] Progreso: [34/50]
+2026-08-31 17:48:37,311 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/textos-fronterizos/
+2026-08-31 17:48:40,282 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Horacio Quiroga
+2026-08-31 17:48:40,309 [INFO] Progreso: [35/50]
+2026-08-31 17:48:40,312 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/ayax/
+2026-08-31 17:48:42,748 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Sófocles
+2026-08-31 17:48:42,771 [INFO] Progreso: [36/50]
+2026-08-31 17:48:42,771 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-hombre-de-arena/
+2026-08-31 17:48:45,205 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, E. T. A. Hoffmann
+2026-08-31 17:48:45,219 [INFO] Progreso: [37/50]
+2026-08-31 17:48:45,220 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-contrastes-de-la-vida/
+2026-08-31 17:48:48,850 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Pío Baroja
+2026-08-31 17:48:48,865 [INFO] Progreso: [38/50]
+2026-08-31 17:48:48,866 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/david-copperfield/
+2026-08-31 17:48:52,864 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Charles Dickens
+2026-08-31 17:48:52,878 [INFO] Progreso: [39/50]
+2026-08-31 17:48:52,878 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-dos-hidalgos-de-verona/
+2026-08-31 17:48:56,081 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, William Shakespeare
+2026-08-31 17:48:56,098 [INFO] Progreso: [40/50]
+2026-08-31 17:48:56,100 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/un-faccioso-mas-y-algunos-frailes-menos/
+2026-08-31 17:48:58,518 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Benito Pérez Galdós
+2026-08-31 17:48:58,579 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 6.91 segundos...
+2026-08-31 17:49:05,500 [INFO] Progreso: [41/50]
+2026-08-31 17:49:05,501 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/orgullo-y-prejuicio/
+2026-08-31 17:49:10,018 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Jane Austen
+2026-08-31 17:49:10,032 [INFO] Progreso: [42/50]
+2026-08-31 17:49:10,033 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-vampiro/
+2026-08-31 17:49:13,242 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, John William Polidori
+2026-08-31 17:49:13,257 [INFO] Progreso: [43/50]
+2026-08-31 17:49:13,257 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/totem-y-tabu/
+2026-08-31 17:49:17,523 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Sigmund Freud
+2026-08-31 17:49:17,538 [INFO] Progreso: [44/50]
+2026-08-31 17:49:17,538 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/pigmalion/
+2026-08-31 17:49:21,488 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, George Bernard Shaw
+2026-08-31 17:49:21,501 [INFO] Progreso: [45/50]
+2026-08-31 17:49:21,502 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-cantar-de-los-nibelungos/
+2026-08-31 17:49:23,927 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Anónimo
+2026-08-31 17:49:23,943 [INFO] Progreso: [46/50]
+2026-08-31 17:49:23,943 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-recursos-de-la-astucia/
+2026-08-31 17:49:27,825 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Pío Baroja
+2026-08-31 17:49:27,842 [INFO] Progreso: [47/50]
+2026-08-31 17:49:27,843 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/todo-sherlock-holmes/
+2026-08-31 17:49:31,552 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Arthur Conan Doyle
+2026-08-31 17:49:31,567 [INFO] Progreso: [48/50]
+2026-08-31 17:49:31,568 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-corrupcion-de-un-angel/
+2026-08-31 17:49:34,910 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Yukio Mishima
+2026-08-31 17:49:34,925 [INFO] Progreso: [49/50]
+2026-08-31 17:49:34,925 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/las-mil-y-una-noches-trad-de-juan-vernet/
+2026-08-31 17:49:37,600 [INFO] Éxito: Se extrajo '' por George Eliot, George Eliot, William Shakespeare, William Shakespeare, Miguel Delibes, Pedro Calderón de la Barca, Wilkie Collins, Charles Dickens, Antón Chéjov, William Shakespeare, Francis Scott Fitzgerald, Benito Pérez Galdós, Anónimo
+2026-08-31 17:49:37,614 [INFO] Progreso: [50/50]
+2026-08-31 17:49:37,614 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/viajes-y-memorias/
+2026-08-31 17:49:41,263 [INFO] Éxito: Se extrajo '' por Víctor Conde, Edward E. Smith, Edward E. Smith, Víctor Conde, Edward E. Smith, Víctor Conde, Mark Samuels, Claudia Durastanti, Matt Dinniman, Iliana Vargas, Betsi Curtis, Ray Bradbury, Robert A. Heinlein, Ross Rocklynne, Varios Autores, Willy Ley, E. M. Forster, Stanislaw Lem
+2026-08-31 17:49:41,277 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 5.56 segundos...
+2026-08-31 17:49:46,836 [INFO] Fase de Control de Calidad: Validando e integrando dataset...
+2026-08-31 17:49:46,910 [WARNING] Control de Títulos: Se encontraron 50 registros sin título. Limpiándolos...
+2026-08-31 17:49:46,918 [INFO] Dataset consolidado finalizado con éxito en 'data\libros.csv'. Cantidad de registros válidos: 0
+2026-08-31 17:49:46,919 [INFO] Cerrando navegador...
