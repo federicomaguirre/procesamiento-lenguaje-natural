@@ -18,7 +18,9 @@ import random
 import argparse
 import logging
 from datetime import datetime
-from urllib.parse import urljoin
+import urllib.request
+from urllib.parse import urljoin, urlparse
+from urllib.robotparser import RobotFileParser
 import pandas as pd
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
@@ -69,6 +71,36 @@ def parse_arguments():
     return parser.parse_args()
 
 
+def cargar_robots_txt(base_url):
+    """
+    Descarga y parsea robots.txt del sitio para respetar sus reglas de acceso.
+    Se usa urllib con nuestro User-Agent (en vez de RobotFileParser.read(), que
+    usa el User-Agent por defecto de Python y es bloqueado con 403 por Cloudflare,
+    lo que haría que RobotFileParser interprete el sitio entero como prohibido).
+    """
+    parsed = urlparse(base_url)
+    robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
+    rp = RobotFileParser()
+    rp.set_url(robots_url)
+    try:
+        request = urllib.request.Request(robots_url, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(request, timeout=10) as response:
+            contenido = response.read().decode("utf-8", errors="replace")
+        rp.parse(contenido.splitlines())
+        logger.info(f"robots.txt cargado correctamente desde: {robots_url}")
+    except Exception as e:
+        logger.warning(f"No se pudo leer robots.txt ({e}). Se continuará sin restricciones adicionales.")
+        return None
+    return rp
+
+
+def permitido_por_robots(robots_parser, url):
+    """Verifica si una URL puede visitarse según robots.txt. Si no hay parser disponible, permite por defecto."""
+    if robots_parser is None:
+        return True
+    return robots_parser.can_fetch(USER_AGENT, url)
+
+
 def init_playwright(p, headless=True):
     """Inicia el navegador Chromium con políticas seguras y User-Agent."""
     logger.info("Iniciando navegador Chromium...")
@@ -82,7 +114,7 @@ def init_playwright(p, headless=True):
     return browser, context
 
 
-def extract_book_urls(context, base_url):
+def extract_book_urls(context, base_url, robots_parser=None):
     """
     Recorre la categoría seleccionada en Lectulandia para obtener todas las URLs de libros disponibles.
     Esto permite conformar el universo total de libros para el muestreo aleatorio.
@@ -91,12 +123,17 @@ def extract_book_urls(context, base_url):
     page = context.new_page()
     book_urls = set()
     current_page_idx = 1
-    
+
     # Lectulandia tiene un sistema de paginación /page/N/
     while True:
         target_url = base_url if current_page_idx == 1 else f"{base_url}page/{current_page_idx}/"
+
+        if not permitido_por_robots(robots_parser, target_url):
+            logger.warning(f"robots.txt prohíbe acceder a {target_url}. Deteniendo recolección del catálogo.")
+            break
+
         logger.info(f"Navegando a página del catálogo: {target_url}")
-        
+
         try:
             response = page.goto(target_url, wait_until="domcontentloaded")
             # Si el código de estado es 404, significa que hemos pasado la última página
@@ -128,7 +165,10 @@ def extract_book_urls(context, base_url):
                     # Descartar el listado general (".../book/") que no es una ficha de libro individual
                     if clean_url.rstrip("/").endswith("/book"):
                         continue
-                    
+
+                    if not permitido_por_robots(robots_parser, clean_url):
+                        continue
+
                     if clean_url not in book_urls:
                         book_urls.add(clean_url)
                         page_links += 1
@@ -155,13 +195,17 @@ def extract_book_urls(context, base_url):
     return list(book_urls)
 
 
-def scrape_book_details(context, url, category_origin):
+def scrape_book_details(context, url, category_origin, robots_parser=None):
     """
     Visita la ficha individual de un libro y extrae sus metadatos y sinopsis.
     """
+    if not permitido_por_robots(robots_parser, url):
+        logger.warning(f"robots.txt prohíbe acceder a {url}. Omitiendo libro.")
+        return None
+
     logger.info(f"Extrayendo metadatos del libro: {url}")
     page = context.new_page()
-    
+
     try:
         page.goto(url, wait_until="domcontentloaded")
         # Simular lectura humana con pausas de cortesía variables
@@ -261,7 +305,13 @@ def main():
     
     base_category_url = "https://ww3.lectulandia.co/genero/clasico/"
     category_name = "Clásico"
-    
+
+    # Cargar robots.txt para respetar las restricciones de acceso del sitio
+    robots_parser = cargar_robots_txt(base_category_url)
+    if not permitido_por_robots(robots_parser, base_category_url):
+        logger.error(f"robots.txt prohíbe acceder a {base_category_url}. Abortando proceso.")
+        return
+
     # Registramos inicio
     logger.info("=== INICIANDO PROCESO DE EXTRACCIÓN ===")
     logger.info(f"Configuración: Límite de libros={args.limit}, Semilla aleatoria={args.seed}")
@@ -273,7 +323,7 @@ def main():
         
         try:
             # 1. Obtener todas las URLs del catálogo para nuestro Muestreo Aleatorio Simple
-            all_urls = extract_book_urls(context, base_category_url)
+            all_urls = extract_book_urls(context, base_category_url, robots_parser=robots_parser)
             total_available = len(all_urls)
             
             if total_available == 0:
@@ -295,7 +345,7 @@ def main():
             # 3. Visitar y extraer datos de cada una de las fichas individuales
             for i, url in enumerate(selected_urls, 1):
                 logger.info(f"Progreso: [{i}/{target_limit}]")
-                book_data = scrape_book_details(context, url, category_name)
+                book_data = scrape_book_details(context, url, category_name, robots_parser=robots_parser)
                 
                 if book_data:
                     extracted_books.append(book_data)

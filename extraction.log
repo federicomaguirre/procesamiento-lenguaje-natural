@@ -858,3 +858,57 @@ Call log:
 2026-08-31 21:56:10,983 [INFO] Éxito: Se extrajo 'Zumalacárregui' por Benito Pérez Galdós
 2026-08-31 21:56:10,990 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/casa-de-munecas/
 2026-08-31 21:56:14,682 [INFO] Éxito: Se extrajo 'Casa de muñecas' por Henrik Ibsen
+2026-08-31 22:19:32,600 [INFO] robots.txt cargado correctamente desde: https://ww3.lectulandia.co/robots.txt
+2026-08-31 22:19:41,813 [INFO] robots.txt cargado correctamente desde: https://ww3.lectulandia.co/robots.txt
+2026-08-31 22:20:09,997 [INFO] robots.txt cargado correctamente desde: https://ww3.lectulandia.co/robots.txt
+2026-08-31 22:20:17,180 [INFO] robots.txt cargado correctamente desde: https://ww3.lectulandia.co/robots.txt
+2026-08-31 22:20:17,181 [INFO] === INICIANDO PROCESO DE EXTRACCIÓN ===
+2026-08-31 22:20:17,181 [INFO] Configuración: Límite de libros=2, Semilla aleatoria=42
+2026-08-31 22:20:17,442 [INFO] Iniciando navegador Chromium...
+2026-08-31 22:20:17,601 [INFO] Fase 1: Recopilando URLs de libros desde la categoría: https://ww3.lectulandia.co/genero/clasico/
+2026-08-31 22:20:17,723 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/
+2026-08-31 22:20:19,930 [INFO] Encontrados 24 libros nuevos en la página 1. Total acumulado: 24
+2026-08-31 22:20:19,930 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/2/
+2026-08-31 22:20:21,854 [INFO] Encontrados 24 libros nuevos en la página 2. Total acumulado: 48
+2026-08-31 22:20:21,854 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/3/
+2026-08-31 22:20:24,051 [INFO] Encontrados 24 libros nuevos en la página 3. Total acumulado: 72
+2026-08-31 22:20:24,052 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/4/
+2026-08-31 22:20:25,774 [INFO] Encontrados 24 libros nuevos en la página 4. Total acumulado: 96
+2026-08-31 22:20:25,774 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/5/
+2026-08-31 22:20:27,817 [INFO] Encontrados 24 libros nuevos en la página 5. Total acumulado: 120
+2026-08-31 22:20:27,817 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/6/
+2026-08-31 22:20:29,856 [INFO] Encontrados 24 libros nuevos en la página 6. Total acumulado: 144
+2026-08-31 22:20:29,856 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/7/
+2026-08-31 22:20:32,244 [INFO] Encontrados 24 libros nuevos en la página 7. Total acumulado: 168
+2026-08-31 22:20:32,244 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/8/
+2026-08-31 22:20:33,965 [INFO] Encontrados 24 libros nuevos en la página 8. Total acumulado: 192
+2026-08-31 22:20:33,965 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/9/
+2026-08-31 22:20:35,697 [INFO] Encontrados 24 libros nuevos en la página 9. Total acumulado: 216
+2026-08-31 22:20:35,698 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/10/
+2026-08-31 22:20:37,225 [INFO] Encontrados 24 libros nuevos en la página 10. Total acumulado: 240
+2026-08-31 22:20:37,225 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/11/
+2026-08-31 22:20:38,751 [INFO] Encontrados 24 libros nuevos en la página 11. Total acumulado: 264
+2026-08-31 22:20:38,751 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/12/
+2026-08-31 22:20:40,749 [INFO] Encontrados 24 libros nuevos en la página 12. Total acumulado: 288
+2026-08-31 22:20:40,750 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/13/
+2026-08-31 22:20:42,294 [INFO] Encontrados 24 libros nuevos en la página 13. Total acumulado: 312
+2026-08-31 22:20:42,295 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/14/
+2026-08-31 22:20:44,039 [INFO] Encontrados 24 libros nuevos en la página 14. Total acumulado: 336
+2026-08-31 22:20:44,039 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/15/
+2026-08-31 22:20:46,086 [INFO] Encontrados 24 libros nuevos en la página 15. Total acumulado: 360
+2026-08-31 22:20:46,086 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/16/
+2026-08-31 22:20:47,914 [INFO] Encontrados 14 libros nuevos en la página 16. Total acumulado: 374
+2026-08-31 22:20:47,915 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/17/
+2026-08-31 22:20:48,448 [INFO] Fin del catálogo detectado en la página 17 (Error 404 esperado).
+2026-08-31 22:20:48,455 [INFO] Universo total recopilado: 374 libros disponibles.
+2026-08-31 22:20:48,455 [INFO] Seleccionando aleatoriamente 2 libros únicos (Semilla 42)...
+2026-08-31 22:20:48,455 [INFO] Progreso: [1/2]
+2026-08-31 22:20:48,455 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-guerra-interminable/
+2026-08-31 22:20:51,843 [INFO] Éxito: Se extrajo 'La guerra interminable' por Joe Haldeman
+2026-08-31 22:20:51,854 [INFO] Progreso: [2/2]
+2026-08-31 22:20:51,854 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-asno-de-oro/
+2026-08-31 22:20:55,660 [INFO] Éxito: Se extrajo 'El asno de oro' por Apuleyo
+2026-08-31 22:20:55,668 [INFO] Fase de Control de Calidad: Validando e integrando dataset...
+2026-08-31 22:20:55,674 [INFO] Dataset consolidado finalizado con éxito en '/tmp/test_robots.csv'. Cantidad de registros válidos: 2
+2026-08-31 22:20:55,674 [INFO] Cerrando navegador...
+2026-08-31 22:20:55,698 [INFO] === PROCESO COMPLETADO EN 38.52 SEGUNDOS (0.64 MINUTOS) ===
