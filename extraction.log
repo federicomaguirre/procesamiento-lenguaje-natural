@@ -197,3 +197,664 @@
 2026-08-31 17:49:46,910 [WARNING] Control de Títulos: Se encontraron 50 registros sin título. Limpiándolos...
 2026-08-31 17:49:46,918 [INFO] Dataset consolidado finalizado con éxito en 'data\libros.csv'. Cantidad de registros válidos: 0
 2026-08-31 17:49:46,919 [INFO] Cerrando navegador...
+2026-08-31 21:18:31,436 [INFO] === INICIANDO PROCESO DE EXTRACCIÓN ===
+2026-08-31 21:18:31,436 [INFO] Configuración: Límite de libros=50, Semilla aleatoria=42
+2026-08-31 21:18:31,565 [INFO] Iniciando navegador Chromium...
+2026-08-31 21:18:31,625 [INFO] Fase 1: Recopilando URLs de libros desde la categoría: https://ww3.lectulandia.co/genero/clasico/
+2026-08-31 21:18:31,730 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/
+2026-08-31 21:18:33,925 [INFO] Encontrados 25 libros nuevos en la página 1. Total acumulado: 25
+2026-08-31 21:18:33,925 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/2/
+2026-08-31 21:18:35,261 [INFO] Encontrados 24 libros nuevos en la página 2. Total acumulado: 49
+2026-08-31 21:18:35,261 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/3/
+2026-08-31 21:18:37,030 [INFO] Encontrados 24 libros nuevos en la página 3. Total acumulado: 73
+2026-08-31 21:18:37,030 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/4/
+2026-08-31 21:18:38,780 [INFO] Encontrados 24 libros nuevos en la página 4. Total acumulado: 97
+2026-08-31 21:18:38,780 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/5/
+2026-08-31 21:18:41,140 [INFO] Encontrados 24 libros nuevos en la página 5. Total acumulado: 121
+2026-08-31 21:18:41,140 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/6/
+2026-08-31 21:18:43,275 [INFO] Encontrados 24 libros nuevos en la página 6. Total acumulado: 145
+2026-08-31 21:18:43,275 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/7/
+2026-08-31 21:18:45,523 [INFO] Encontrados 24 libros nuevos en la página 7. Total acumulado: 169
+2026-08-31 21:18:45,524 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/8/
+2026-08-31 21:18:47,104 [INFO] Encontrados 24 libros nuevos en la página 8. Total acumulado: 193
+2026-08-31 21:18:47,105 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/9/
+2026-08-31 21:18:49,023 [INFO] Encontrados 24 libros nuevos en la página 9. Total acumulado: 217
+2026-08-31 21:18:49,023 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/10/
+2026-08-31 21:18:50,531 [INFO] Encontrados 24 libros nuevos en la página 10. Total acumulado: 241
+2026-08-31 21:18:50,531 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/11/
+2026-08-31 21:18:52,194 [INFO] Encontrados 24 libros nuevos en la página 11. Total acumulado: 265
+2026-08-31 21:18:52,194 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/12/
+2026-08-31 21:18:54,201 [INFO] Encontrados 24 libros nuevos en la página 12. Total acumulado: 289
+2026-08-31 21:18:54,201 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/13/
+2026-08-31 21:18:55,535 [INFO] Encontrados 24 libros nuevos en la página 13. Total acumulado: 313
+2026-08-31 21:18:55,535 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/14/
+2026-08-31 21:18:57,223 [INFO] Encontrados 24 libros nuevos en la página 14. Total acumulado: 337
+2026-08-31 21:18:57,224 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/15/
+2026-08-31 21:18:59,440 [INFO] Encontrados 24 libros nuevos en la página 15. Total acumulado: 361
+2026-08-31 21:18:59,441 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/16/
+2026-08-31 21:19:01,462 [INFO] Encontrados 14 libros nuevos en la página 16. Total acumulado: 375
+2026-08-31 21:19:01,463 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/17/
+2026-08-31 21:19:01,968 [INFO] Fin del catálogo detectado en la página 17 (Error 404 esperado).
+2026-08-31 21:19:01,974 [INFO] Universo total recopilado: 375 libros disponibles.
+2026-08-31 21:19:01,974 [INFO] Seleccionando aleatoriamente 50 libros únicos (Semilla 42)...
+2026-08-31 21:19:01,975 [INFO] Progreso: [1/50]
+2026-08-31 21:19:01,975 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-elogio-de-la-sombra/
+2026-08-31 21:19:04,555 [INFO] Éxito: Se extrajo 'El elogio de la sombra' por Junichirô Tanizaki
+2026-08-31 21:19:04,563 [INFO] Progreso: [2/50]
+2026-08-31 21:19:04,563 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/aurora-roja/
+2026-08-31 21:19:08,345 [INFO] Éxito: Se extrajo 'Aurora roja' por Pío Baroja
+2026-08-31 21:19:08,352 [INFO] Progreso: [3/50]
+2026-08-31 21:19:08,353 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/filoctetes/
+2026-08-31 21:19:11,625 [INFO] Éxito: Se extrajo 'Filoctetes' por Sófocles
+2026-08-31 21:19:11,633 [INFO] Progreso: [4/50]
+2026-08-31 21:19:11,633 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-fortuna-de-los-rougon/
+2026-08-31 21:19:15,069 [INFO] Éxito: Se extrajo 'La fortuna de los Rougon' por Émile Zola
+2026-08-31 21:19:15,078 [INFO] Progreso: [5/50]
+2026-08-31 21:19:15,078 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/por-el-camino-de-swann/
+2026-08-31 21:19:17,459 [INFO] Éxito: Se extrajo 'Por el camino de Swann' por Marcel Proust
+2026-08-31 21:19:17,468 [INFO] Progreso: [6/50]
+2026-08-31 21:19:17,468 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-pais-de-las-sombras-largas/
+2026-08-31 21:19:20,952 [INFO] Éxito: Se extrajo 'El país de las sombras largas' por Hans Ruesch
+2026-08-31 21:19:20,958 [INFO] Progreso: [7/50]
+2026-08-31 21:19:20,958 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-molino-del-floss/
+2026-08-31 21:19:23,211 [INFO] Éxito: Se extrajo 'El molino del Floss' por George Eliot
+2026-08-31 21:19:23,220 [INFO] Progreso: [8/50]
+2026-08-31 21:19:23,220 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/tesis-sobre-feuerbach/
+2026-08-31 21:19:26,298 [INFO] Éxito: Se extrajo 'Tesis sobre Feuerbach' por Karl Marx
+2026-08-31 21:19:26,302 [INFO] Progreso: [9/50]
+2026-08-31 21:19:26,302 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-amor-el-dandismo-y-la-intriga/
+2026-08-31 21:19:30,440 [INFO] Éxito: Se extrajo 'El amor, el dandismo y la intriga' por Pío Baroja
+2026-08-31 21:19:30,449 [INFO] Progreso: [10/50]
+2026-08-31 21:19:30,449 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/textos-fronterizos/
+2026-08-31 21:19:33,769 [INFO] Éxito: Se extrajo 'Textos fronterizos' por Horacio Quiroga
+2026-08-31 21:19:33,775 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 7.78 segundos...
+2026-08-31 21:19:41,564 [INFO] Progreso: [11/50]
+2026-08-31 21:19:41,565 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-respuesta-es-no/
+2026-08-31 21:19:45,196 [INFO] Éxito: Se extrajo 'La respuesta es no' por Wilkie Collins
+2026-08-31 21:19:45,203 [INFO] Progreso: [12/50]
+2026-08-31 21:19:45,203 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-retrato-de-dorian-gray/
+2026-08-31 21:19:48,991 [INFO] Éxito: Se extrajo 'El retrato de Dorian Gray' por Oscar Wilde
+2026-08-31 21:19:48,999 [INFO] Progreso: [13/50]
+2026-08-31 21:19:48,999 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-doze-trabajos-de-hercules/
+2026-08-31 21:19:52,724 [INFO] Éxito: Se extrajo 'Los doze trabajos de Hércules' por Enrique de Villena
+2026-08-31 21:19:52,732 [INFO] Progreso: [14/50]
+2026-08-31 21:19:52,732 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-tempestad/
+2026-08-31 21:19:55,055 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:19:55,064 [INFO] Progreso: [15/50]
+2026-08-31 21:19:55,064 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-monje/
+2026-08-31 21:19:57,371 [INFO] Éxito: Se extrajo 'El monje' por Matthew G. Lewis
+2026-08-31 21:19:57,379 [INFO] Progreso: [16/50]
+2026-08-31 21:19:57,379 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/ella/
+2026-08-31 21:20:00,189 [INFO] Éxito: Se extrajo 'Ella' por H. Rider Haggard
+2026-08-31 21:20:00,197 [INFO] Progreso: [17/50]
+2026-08-31 21:20:00,197 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-contrastes-de-la-vida/
+2026-08-31 21:20:02,766 [INFO] Éxito: Se extrajo 'Los contrastes de la vida' por Pío Baroja
+2026-08-31 21:20:02,775 [INFO] Progreso: [18/50]
+2026-08-31 21:20:02,775 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/napoleon-en-chamartin/
+2026-08-31 21:20:04,994 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:20:04,999 [INFO] Progreso: [19/50]
+2026-08-31 21:20:04,999 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-candor-del-padre-brown/
+2026-08-31 21:20:08,909 [INFO] Éxito: Se extrajo 'El candor del padre Brown' por Gilbert Keith Chesterton
+2026-08-31 21:20:08,917 [INFO] Progreso: [20/50]
+2026-08-31 21:20:08,917 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-corazon-de-las-tinieblas/
+2026-08-31 21:20:12,915 [INFO] Éxito: Se extrajo 'El corazón de las tinieblas' por Joseph Conrad
+2026-08-31 21:20:12,922 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 6.57 segundos...
+2026-08-31 21:20:19,501 [INFO] Progreso: [21/50]
+2026-08-31 21:20:19,501 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-capote-trad-victor-gallego/
+2026-08-31 21:20:23,055 [INFO] Éxito: Se extrajo 'El capote (Trad. Víctor Gallego)' por Nikolái Gógol
+2026-08-31 21:20:23,060 [INFO] Progreso: [22/50]
+2026-08-31 21:20:23,060 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/juan-martin-el-empecinado/
+2026-08-31 21:20:25,705 [INFO] Éxito: Se extrajo 'Juan Martín el Empecinado' por Benito Pérez Galdós
+2026-08-31 21:20:25,714 [INFO] Progreso: [23/50]
+2026-08-31 21:20:25,714 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/apologia-de-socrates/
+2026-08-31 21:20:29,698 [INFO] Éxito: Se extrajo 'Apología de Sócrates' por Platón
+2026-08-31 21:20:29,706 [INFO] Progreso: [24/50]
+2026-08-31 21:20:29,706 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/
+2026-08-31 21:20:32,656 [INFO] Éxito: Se extrajo 'Sin título' por Miguel Lago, Clara Fuertes, Mile Bluett, Beverley Watts, François Rabelais, María Zambrano, Saturnino Calleja, Shane Stevens, Carlos Laredo Verdejo, Pablo Rivero, Víctor Conde, Mile Bluett, Peter Sloterdijk, Oscar Wilde, José Urbano Martínez Carreras, András László, Lynn Morrison, Teo Palacios, María Teresa Álvarez, Mile Bluett, Michael Palmer, Edward E. Smith, Harold Brodkey, Gore Vidal
+2026-08-31 21:20:32,664 [INFO] Progreso: [25/50]
+2026-08-31 21:20:32,664 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/guerra-y-paz-ed-muchnik/
+2026-08-31 21:20:35,218 [INFO] Éxito: Se extrajo 'Guerra y paz (Ed. Muchnik)' por León Tolstói
+2026-08-31 21:20:35,227 [INFO] Progreso: [26/50]
+2026-08-31 21:20:35,227 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/ivanhoe/
+2026-08-31 21:20:37,811 [INFO] Éxito: Se extrajo 'Ivanhoe' por Walter Scott
+2026-08-31 21:20:37,819 [INFO] Progreso: [27/50]
+2026-08-31 21:20:37,819 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-sabor-de-la-venganza/
+2026-08-31 21:20:41,080 [INFO] Éxito: Se extrajo 'El sabor de la venganza' por Pío Baroja
+2026-08-31 21:20:41,084 [INFO] Progreso: [28/50]
+2026-08-31 21:20:41,084 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/germinal/
+2026-08-31 21:20:43,860 [INFO] Éxito: Se extrajo 'Germinal' por Émile Zola
+2026-08-31 21:20:43,869 [INFO] Progreso: [29/50]
+2026-08-31 21:20:43,869 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/viaje-al-fin-de-la-noche/
+2026-08-31 21:20:47,276 [INFO] Éxito: Se extrajo 'Viaje al fin de la noche' por Louis-Ferdinand Céline
+2026-08-31 21:20:47,285 [INFO] Progreso: [30/50]
+2026-08-31 21:20:47,285 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/rayuela/
+2026-08-31 21:20:51,163 [INFO] Éxito: Se extrajo 'Rayuela' por Julio Cortázar
+2026-08-31 21:20:51,171 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 7.00 segundos...
+2026-08-31 21:20:58,171 [INFO] Progreso: [31/50]
+2026-08-31 21:20:58,171 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/antigona/
+2026-08-31 21:21:00,661 [INFO] Éxito: Se extrajo 'Antígona' por Sófocles
+2026-08-31 21:21:00,670 [INFO] Progreso: [32/50]
+2026-08-31 21:21:00,670 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/werther/
+2026-08-31 21:21:04,820 [INFO] Éxito: Se extrajo 'Werther' por Johann Wolfgang von Goethe
+2026-08-31 21:21:04,829 [INFO] Progreso: [33/50]
+2026-08-31 21:21:04,829 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-papeles-postumos-del-club-pickwick/
+2026-08-31 21:21:08,080 [INFO] Éxito: Se extrajo 'Los papeles póstumos del club Pickwick' por Charles Dickens
+2026-08-31 21:21:08,088 [INFO] Progreso: [34/50]
+2026-08-31 21:21:08,088 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-extrano-caso-del-dr-jekyll-y-mr-hyde/
+2026-08-31 21:21:10,530 [INFO] Éxito: Se extrajo 'El extraño caso del Dr. Jekyll y Mr. Hyde' por Robert Louis Stevenson
+2026-08-31 21:21:10,539 [INFO] Progreso: [35/50]
+2026-08-31 21:21:10,539 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/absalon-absalon/
+2026-08-31 21:21:12,580 [INFO] Éxito: Se extrajo '¡Absalón, Absalón!' por William Faulkner
+2026-08-31 21:21:12,588 [INFO] Progreso: [36/50]
+2026-08-31 21:21:12,588 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-juguete-rabioso/
+2026-08-31 21:21:14,597 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:21:14,601 [INFO] Progreso: [37/50]
+2026-08-31 21:21:14,601 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-faro-del-fin-del-mundo/
+2026-08-31 21:21:17,639 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:21:17,648 [INFO] Progreso: [38/50]
+2026-08-31 21:21:17,649 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-amante/
+2026-08-31 21:21:21,395 [INFO] Éxito: Se extrajo 'El amante' por Marguerite Duras
+2026-08-31 21:21:21,402 [INFO] Progreso: [39/50]
+2026-08-31 21:21:21,402 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-arte-de-la-prudencia/
+2026-08-31 21:21:24,072 [INFO] Éxito: Se extrajo 'El arte de la prudencia' por Baltasar Gracián
+2026-08-31 21:21:24,080 [INFO] Progreso: [40/50]
+2026-08-31 21:21:24,080 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/pequeno-hombre-y-ahora-que/
+2026-08-31 21:21:26,216 [INFO] Éxito: Se extrajo 'Pequeño hombre ¿y ahora qué?' por Hans Fallada
+2026-08-31 21:21:26,225 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 6.91 segundos...
+2026-08-31 21:21:33,136 [INFO] Progreso: [41/50]
+2026-08-31 21:21:33,136 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/las-mil-y-una-noches-trad-de-juan-vernet/
+2026-08-31 21:21:37,355 [INFO] Éxito: Se extrajo 'Las mil y una noches (trad. de Juan Vernet)' por Anónimo
+2026-08-31 21:21:37,362 [INFO] Progreso: [42/50]
+2026-08-31 21:21:37,362 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/dersu-uzala/
+2026-08-31 21:21:40,658 [INFO] Éxito: Se extrajo 'Dersu Uzala' por Vladimir Arseniev
+2026-08-31 21:21:40,666 [INFO] Progreso: [43/50]
+2026-08-31 21:21:40,667 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-iliada/
+2026-08-31 21:21:44,806 [INFO] Éxito: Se extrajo 'La Ilíada' por Homero
+2026-08-31 21:21:44,814 [INFO] Progreso: [44/50]
+2026-08-31 21:21:44,815 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/david-copperfield/
+2026-08-31 21:21:48,588 [INFO] Éxito: Se extrajo 'David Copperfield' por Charles Dickens
+2026-08-31 21:21:48,596 [INFO] Progreso: [45/50]
+2026-08-31 21:21:48,596 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/orgullo-y-prejuicio/
+2026-08-31 21:21:50,729 [INFO] Éxito: Se extrajo 'Orgullo y prejuicio' por Jane Austen
+2026-08-31 21:21:50,737 [INFO] Progreso: [46/50]
+2026-08-31 21:21:50,737 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/las-suplicantes/
+2026-08-31 21:21:54,594 [INFO] Éxito: Se extrajo 'Las suplicantes' por Esquilo
+2026-08-31 21:21:54,603 [INFO] Progreso: [47/50]
+2026-08-31 21:21:54,603 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/cumbres-borrascosas/
+2026-08-31 21:21:58,180 [INFO] Éxito: Se extrajo 'Cumbres borrascosas' por Emily Brontë
+2026-08-31 21:21:58,188 [INFO] Progreso: [48/50]
+2026-08-31 21:21:58,188 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/todo-sherlock-holmes/
+2026-08-31 21:22:01,460 [INFO] Éxito: Se extrajo 'Todo Sherlock Holmes' por Arthur Conan Doyle
+2026-08-31 21:22:01,465 [INFO] Progreso: [49/50]
+2026-08-31 21:22:01,465 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/ferdydurke/
+2026-08-31 21:22:03,860 [INFO] Éxito: Se extrajo 'Ferdydurke' por Witold Gombrowicz
+2026-08-31 21:22:03,865 [INFO] Progreso: [50/50]
+2026-08-31 21:22:03,865 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/grandes-esperanzas/
+2026-08-31 21:22:07,017 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:22:07,022 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 5.56 segundos...
+2026-08-31 21:22:12,585 [INFO] Fase de Control de Calidad: Validando e integrando dataset...
+2026-08-31 21:22:12,595 [INFO] Dataset consolidado finalizado con éxito en 'data/libros.csv'. Cantidad de registros válidos: 50
+2026-08-31 21:22:12,595 [INFO] Cerrando navegador...
+2026-08-31 21:22:12,626 [INFO] === PROCESO COMPLETADO EN 221.19 SEGUNDOS (3.69 MINUTOS) ===
+2026-08-31 21:38:57,810 [INFO] Eliminando archivo de salida previo 'data/libros.csv' para iniciar una corrida limpia.
+2026-08-31 21:38:57,811 [INFO] === INICIANDO PROCESO DE EXTRACCIÓN ===
+2026-08-31 21:38:57,811 [INFO] Configuración: Límite de libros=100, Semilla aleatoria=42
+2026-08-31 21:38:58,079 [INFO] Iniciando navegador Chromium...
+2026-08-31 21:38:58,260 [INFO] Fase 1: Recopilando URLs de libros desde la categoría: https://ww3.lectulandia.co/genero/clasico/
+2026-08-31 21:38:58,388 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/
+2026-08-31 21:39:00,637 [INFO] Encontrados 25 libros nuevos en la página 1. Total acumulado: 25
+2026-08-31 21:39:00,637 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/2/
+2026-08-31 21:39:02,144 [INFO] Encontrados 24 libros nuevos en la página 2. Total acumulado: 49
+2026-08-31 21:39:02,144 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/3/
+2026-08-31 21:39:03,904 [INFO] Encontrados 24 libros nuevos en la página 3. Total acumulado: 73
+2026-08-31 21:39:03,905 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/4/
+2026-08-31 21:39:05,601 [INFO] Encontrados 24 libros nuevos en la página 4. Total acumulado: 97
+2026-08-31 21:39:05,602 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/5/
+2026-08-31 21:39:07,823 [INFO] Encontrados 24 libros nuevos en la página 5. Total acumulado: 121
+2026-08-31 21:39:07,823 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/6/
+2026-08-31 21:39:10,039 [INFO] Encontrados 24 libros nuevos en la página 6. Total acumulado: 145
+2026-08-31 21:39:10,039 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/7/
+2026-08-31 21:39:12,344 [INFO] Encontrados 0 libros nuevos en la página 7. Total acumulado: 145
+2026-08-31 21:39:12,344 [INFO] No se encontraron enlaces de libros en esta página. Finalizando recolección de catálogo.
+2026-08-31 21:39:12,354 [INFO] Universo total recopilado: 145 libros disponibles.
+2026-08-31 21:39:12,354 [INFO] Seleccionando aleatoriamente 100 libros únicos (Semilla 42)...
+2026-08-31 21:39:12,354 [INFO] Progreso: [1/100]
+2026-08-31 21:39:12,354 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-valle-del-terror/
+2026-08-31 21:39:15,682 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:39:15,694 [INFO] Progreso: [2/100]
+2026-08-31 21:39:15,694 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/callejon-sin-salida/
+2026-08-31 21:39:18,824 [INFO] Éxito: Se extrajo 'Callejón sin salida' por Charles Dickens, Wilkie Collins
+2026-08-31 21:39:18,834 [INFO] Progreso: [3/100]
+2026-08-31 21:39:18,834 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/robin-hood-2/
+2026-08-31 21:39:22,406 [INFO] Éxito: Se extrajo 'Robin Hood' por Anónimo
+2026-08-31 21:39:22,416 [INFO] Progreso: [4/100]
+2026-08-31 21:39:22,416 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-periquillo-sarniento/
+2026-08-31 21:39:25,112 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:39:25,122 [INFO] Progreso: [5/100]
+2026-08-31 21:39:25,122 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/armadale/
+2026-08-31 21:39:28,566 [INFO] Éxito: Se extrajo 'Armadale' por Wilkie Collins
+2026-08-31 21:39:28,575 [INFO] Progreso: [6/100]
+2026-08-31 21:39:28,575 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/cuentos-completos-vladimir-nabokov/
+2026-08-31 21:39:31,159 [INFO] Éxito: Se extrajo 'Cuentos completos' por Vladimir Nabokov
+2026-08-31 21:39:31,168 [INFO] Progreso: [7/100]
+2026-08-31 21:39:31,168 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/kokoro/
+2026-08-31 21:39:35,021 [INFO] Éxito: Se extrajo 'Kokoro' por Natsume Söseki
+2026-08-31 21:39:35,029 [INFO] Progreso: [8/100]
+2026-08-31 21:39:35,029 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/mansfield-park/
+2026-08-31 21:39:37,166 [INFO] Éxito: Se extrajo 'Mansfield Park' por Jane Austen
+2026-08-31 21:39:37,176 [INFO] Progreso: [9/100]
+2026-08-31 21:39:37,176 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/julio-cesar/
+2026-08-31 21:39:39,962 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:39:39,971 [INFO] Progreso: [10/100]
+2026-08-31 21:39:39,971 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/sin-nombre/
+2026-08-31 21:39:43,286 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:39:43,292 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 9.31 segundos...
+2026-08-31 21:39:52,602 [INFO] Progreso: [11/100]
+2026-08-31 21:39:52,603 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/vampiros-ilustrado/
+2026-08-31 21:39:55,007 [INFO] Éxito: Se extrajo 'Vampiros (Ilustrado)' por Alexandre Dumas, Arthur Conan Doyle, Charles Baudelaire, E. T. A. Hoffmann, Edgar Allan Poe, Guy de Maupassant, John William Polidori, Joseph Sheridan Le Fanu, Lord Byron, Nikolái Gógol, Théophile Gautier, Varios Autores
+2026-08-31 21:39:55,014 [INFO] Progreso: [12/100]
+2026-08-31 21:39:55,015 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-fulgor-y-la-sangre/
+2026-08-31 21:39:57,596 [INFO] Éxito: Se extrajo 'El fulgor y la sangre' por Ignacio Aldecoa
+2026-08-31 21:39:57,604 [INFO] Progreso: [13/100]
+2026-08-31 21:39:57,604 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/primeras-canciones/
+2026-08-31 21:40:00,760 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:40:00,769 [INFO] Progreso: [14/100]
+2026-08-31 21:40:00,770 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/diferencia-de-la-filosofia-de-la-naturaleza-en-democrito-y-epicuro-version-ade/
+2026-08-31 21:40:04,056 [INFO] Éxito: Se extrajo 'Diferencia de la filosofía de la naturaleza en Demócrito y Epicuro (versión ADE)' por Karl Marx
+2026-08-31 21:40:04,064 [INFO] Progreso: [15/100]
+2026-08-31 21:40:04,065 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/sherlock-holmes-la-coleccion-completa/
+2026-08-31 21:40:06,669 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:40:06,679 [INFO] Progreso: [16/100]
+2026-08-31 21:40:06,679 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/marido-y-mujer/
+2026-08-31 21:40:10,044 [INFO] Éxito: Se extrajo 'Marido y mujer' por Wilkie Collins
+2026-08-31 21:40:10,053 [INFO] Progreso: [17/100]
+2026-08-31 21:40:10,054 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/juan-martin-el-empecinado/
+2026-08-31 21:40:12,789 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:40:12,798 [INFO] Progreso: [18/100]
+2026-08-31 21:40:12,798 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/senda-hacia-tierras-hondas/
+2026-08-31 21:40:15,596 [INFO] Éxito: Se extrajo 'Senda hacia tierras hondas' por Bashô Matsuo
+2026-08-31 21:40:15,603 [INFO] Progreso: [19/100]
+2026-08-31 21:40:15,603 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-candor-del-padre-brown/
+2026-08-31 21:40:18,528 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:40:18,538 [INFO] Progreso: [20/100]
+2026-08-31 21:40:18,538 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/un-faccioso-mas-y-algunos-frailes-menos/
+2026-08-31 21:40:22,596 [INFO] Éxito: Se extrajo 'Un faccioso más y algunos frailes menos' por Benito Pérez Galdós
+2026-08-31 21:40:22,605 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 8.40 segundos...
+2026-08-31 21:40:31,011 [INFO] Progreso: [21/100]
+2026-08-31 21:40:31,012 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/las-mil-y-una-noches/
+2026-08-31 21:40:33,280 [INFO] Éxito: Se extrajo 'Las mil y una noches' por Anónimo
+2026-08-31 21:40:33,289 [INFO] Progreso: [22/100]
+2026-08-31 21:40:33,289 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-alcalde-de-zalamea/
+2026-08-31 21:40:36,856 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:40:36,866 [INFO] Progreso: [23/100]
+2026-08-31 21:40:36,866 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/7-de-julio/
+2026-08-31 21:40:40,242 [INFO] Éxito: Se extrajo '7 de julio' por Benito Pérez Galdós
+2026-08-31 21:40:40,251 [INFO] Progreso: [24/100]
+2026-08-31 21:40:40,251 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/criton-trad-gredos/
+2026-08-31 21:40:43,598 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:40:43,611 [INFO] Progreso: [25/100]
+2026-08-31 21:40:43,611 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-retrato-de-dorian-gray/
+2026-08-31 21:40:46,346 [INFO] Éxito: Se extrajo 'El retrato de Dorian Gray' por Oscar Wilde
+2026-08-31 21:40:46,351 [INFO] Progreso: [26/100]
+2026-08-31 21:40:46,351 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-fantasma-de-la-opera/
+2026-08-31 21:40:48,880 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:40:48,889 [INFO] Progreso: [27/100]
+2026-08-31 21:40:48,889 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/relatos-1-1913-1927/
+2026-08-31 21:40:51,114 [INFO] Éxito: Se extrajo 'Relatos 1 (1913-1927)' por Bertolt Brecht
+2026-08-31 21:40:51,123 [INFO] Progreso: [28/100]
+2026-08-31 21:40:51,123 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/persuasion/
+2026-08-31 21:40:52,977 [INFO] Éxito: Se extrajo 'Persuasión' por Jane Austen
+2026-08-31 21:40:52,984 [INFO] Progreso: [29/100]
+2026-08-31 21:40:52,984 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/un-voluntario-realista/
+2026-08-31 21:40:56,459 [INFO] Éxito: Se extrajo 'Un voluntario realista' por Benito Pérez Galdós
+2026-08-31 21:40:56,467 [INFO] Progreso: [30/100]
+2026-08-31 21:40:56,468 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/cuentos-de-canterbury/
+2026-08-31 21:41:00,054 [INFO] Éxito: Se extrajo 'Cuentos de Canterbury' por Geoffrey Chaucer
+2026-08-31 21:41:00,061 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 9.86 segundos...
+2026-08-31 21:41:09,926 [INFO] Progreso: [31/100]
+2026-08-31 21:41:09,926 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/textos-fronterizos/
+2026-08-31 21:41:13,276 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:41:13,286 [INFO] Progreso: [32/100]
+2026-08-31 21:41:13,286 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-senora-lirriper/
+2026-08-31 21:41:16,173 [INFO] Éxito: Se extrajo 'La Señora Lirriper' por Charles Dickens
+2026-08-31 21:41:16,180 [INFO] Progreso: [33/100]
+2026-08-31 21:41:16,180 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/lisistrata/
+2026-08-31 21:41:18,216 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:41:18,227 [INFO] Progreso: [34/100]
+2026-08-31 21:41:18,227 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/apologia-de-socrates/
+2026-08-31 21:41:21,351 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:41:21,361 [INFO] Progreso: [35/100]
+2026-08-31 21:41:21,361 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/las-aventuras-de-pinocho/
+2026-08-31 21:41:25,080 [INFO] Éxito: Se extrajo 'Las aventuras de Pinocho' por Carlo Collodi
+2026-08-31 21:41:25,090 [INFO] Progreso: [36/100]
+2026-08-31 21:41:25,090 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-sabor-de-la-venganza/
+2026-08-31 21:41:28,129 [INFO] Éxito: Se extrajo 'El sabor de la venganza' por Pío Baroja
+2026-08-31 21:41:28,142 [INFO] Progreso: [37/100]
+2026-08-31 21:41:28,142 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/confesiones-de-un-bribon/
+2026-08-31 21:41:30,364 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:41:30,372 [INFO] Progreso: [38/100]
+2026-08-31 21:41:30,373 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/mujercitas/
+2026-08-31 21:41:33,455 [INFO] Éxito: Se extrajo 'Mujercitas' por Louisa May Alcott
+2026-08-31 21:41:33,463 [INFO] Progreso: [39/100]
+2026-08-31 21:41:33,463 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-pequena-dorrit/
+2026-08-31 21:41:35,631 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:41:35,641 [INFO] Progreso: [40/100]
+2026-08-31 21:41:35,641 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/las-furias/
+2026-08-31 21:41:39,738 [INFO] Éxito: Se extrajo 'Las furias' por Pío Baroja
+2026-08-31 21:41:39,746 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 9.61 segundos...
+2026-08-31 21:41:49,364 [INFO] Progreso: [41/100]
+2026-08-31 21:41:49,364 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-educacion-sentimental/
+2026-08-31 21:41:53,411 [INFO] Éxito: Se extrajo 'La educación sentimental' por Gustave Flaubert
+2026-08-31 21:41:53,420 [INFO] Progreso: [42/100]
+2026-08-31 21:41:53,420 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/apologia-de-socrates-trad-gredos/
+2026-08-31 21:41:56,773 [INFO] Éxito: Se extrajo 'Apología de Sócrates (Trad. Gredos)' por Platón
+2026-08-31 21:41:56,781 [INFO] Progreso: [43/100]
+2026-08-31 21:41:56,782 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/ana-karenina/
+2026-08-31 21:41:59,888 [INFO] Éxito: Se extrajo 'Ana Karenina' por León Tolstói
+2026-08-31 21:41:59,896 [INFO] Progreso: [44/100]
+2026-08-31 21:41:59,896 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-pazos-de-ulloa/
+2026-08-31 21:42:01,984 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:42:01,993 [INFO] Progreso: [45/100]
+2026-08-31 21:42:01,994 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-secreto-de-sarah/
+2026-08-31 21:42:04,678 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:42:04,688 [INFO] Progreso: [46/100]
+2026-08-31 21:42:04,688 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-tempestad/
+2026-08-31 21:42:08,745 [INFO] Éxito: Se extrajo 'La tempestad' por William Shakespeare
+2026-08-31 21:42:08,753 [INFO] Progreso: [47/100]
+2026-08-31 21:42:08,753 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/don-juan-tenorio/
+2026-08-31 21:42:12,285 [INFO] Éxito: Se extrajo 'Don Juan Tenorio' por José Zorrilla
+2026-08-31 21:42:12,292 [INFO] Progreso: [48/100]
+2026-08-31 21:42:12,292 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-barrio-maldito/
+2026-08-31 21:42:14,593 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:42:14,602 [INFO] Progreso: [49/100]
+2026-08-31 21:42:14,602 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/viaje-al-oeste-las-aventuras-del-rey-mono/
+2026-08-31 21:42:17,330 [INFO] Éxito: Se extrajo 'Viaje al Oeste. Las aventuras del Rey Mono' por Anónimo
+2026-08-31 21:42:17,335 [INFO] Progreso: [50/100]
+2026-08-31 21:42:17,335 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/relatos-2-1927-1949/
+2026-08-31 21:42:20,353 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:42:20,361 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 5.39 segundos...
+2026-08-31 21:42:25,760 [INFO] Progreso: [51/100]
+2026-08-31 21:42:25,761 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-casa-de-shakespeare/
+2026-08-31 21:42:29,088 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:42:29,097 [INFO] Progreso: [52/100]
+2026-08-31 21:42:29,097 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-segunda-casaca/
+2026-08-31 21:42:32,598 [INFO] Éxito: Se extrajo 'La segunda casaca' por Benito Pérez Galdós
+2026-08-31 21:42:32,606 [INFO] Progreso: [53/100]
+2026-08-31 21:42:32,606 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/poder-burgues-y-poder-revolucionario/
+2026-08-31 21:42:36,594 [INFO] Éxito: Se extrajo 'Poder burgués y poder revolucionario' por Mario Roberto Santucho
+2026-08-31 21:42:36,601 [INFO] Progreso: [54/100]
+2026-08-31 21:42:36,601 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-mundo-de-guermantes/
+2026-08-31 21:42:39,592 [INFO] Éxito: Se extrajo 'El mundo de Guermantes' por Marcel Proust
+2026-08-31 21:42:39,600 [INFO] Progreso: [55/100]
+2026-08-31 21:42:39,600 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/del-asesinato-considerado-como-una-de-las-bellas-artes/
+2026-08-31 21:42:41,648 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:42:41,659 [INFO] Progreso: [56/100]
+2026-08-31 21:42:41,659 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-desierto-y-otros-cuentos/
+2026-08-31 21:42:44,784 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:42:44,791 [INFO] Progreso: [57/100]
+2026-08-31 21:42:44,791 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/a-este-lado-del-paraiso/
+2026-08-31 21:42:48,815 [INFO] Éxito: Se extrajo 'A este lado del paraíso' por Francis Scott Fitzgerald
+2026-08-31 21:42:48,824 [INFO] Progreso: [58/100]
+2026-08-31 21:42:48,824 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/botchan/
+2026-08-31 21:42:51,271 [INFO] Éxito: Se extrajo 'Botchan' por Natsume Söseki
+2026-08-31 21:42:51,279 [INFO] Progreso: [59/100]
+2026-08-31 21:42:51,279 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-vida-es-sueno/
+2026-08-31 21:42:54,548 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:42:54,559 [INFO] Progreso: [60/100]
+2026-08-31 21:42:54,559 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-desterrados-y-otros-cuentos/
+2026-08-31 21:42:57,863 [INFO] Éxito: Se extrajo 'Los desterrados y otros cuentos' por Horacio Quiroga
+2026-08-31 21:42:57,872 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 9.82 segundos...
+2026-08-31 21:43:07,699 [INFO] Progreso: [61/100]
+2026-08-31 21:43:07,699 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/pequeno-hombre-y-ahora-que/
+2026-08-31 21:43:11,641 [INFO] Éxito: Se extrajo 'Pequeño hombre ¿y ahora qué?' por Hans Fallada
+2026-08-31 21:43:11,649 [INFO] Progreso: [62/100]
+2026-08-31 21:43:11,649 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-capote-trad-victor-gallego/
+2026-08-31 21:43:14,955 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:43:14,964 [INFO] Progreso: [63/100]
+2026-08-31 21:43:14,965 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-capote-trad-irene-tchernova/
+2026-08-31 21:43:18,470 [INFO] Éxito: Se extrajo 'El capote (Trad. Irene Tchernova)' por Nikolái Gógol
+2026-08-31 21:43:18,479 [INFO] Progreso: [64/100]
+2026-08-31 21:43:18,479 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-contrato-social/
+2026-08-31 21:43:21,703 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:43:21,712 [INFO] Progreso: [65/100]
+2026-08-31 21:43:21,712 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-amor-el-dandismo-y-la-intriga/
+2026-08-31 21:43:24,607 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:43:24,618 [INFO] Progreso: [66/100]
+2026-08-31 21:43:24,618 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-sombra-del-cipres-es-alargada/
+2026-08-31 21:43:28,092 [INFO] Éxito: Se extrajo 'La sombra del ciprés es alargada' por Miguel Delibes
+2026-08-31 21:43:28,102 [INFO] Progreso: [67/100]
+2026-08-31 21:43:28,102 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/doble-engano/
+2026-08-31 21:43:30,653 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:43:30,662 [INFO] Progreso: [68/100]
+2026-08-31 21:43:30,663 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/narraciones-extraordinarias/
+2026-08-31 21:43:34,618 [INFO] Éxito: Se extrajo 'Narraciones extraordinarias' por Edgar Allan Poe
+2026-08-31 21:43:34,627 [INFO] Progreso: [69/100]
+2026-08-31 21:43:34,628 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-venus-de-las-pieles/
+2026-08-31 21:43:37,556 [INFO] Éxito: Se extrajo 'La Venus de las pieles' por Leopold von Sacher-Masoch
+2026-08-31 21:43:37,565 [INFO] Progreso: [70/100]
+2026-08-31 21:43:37,565 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-salvaje-y-otros-cuentos/
+2026-08-31 21:43:39,965 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:43:39,976 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 5.32 segundos...
+2026-08-31 21:43:45,302 [INFO] Progreso: [71/100]
+2026-08-31 21:43:45,302 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/emma/
+2026-08-31 21:43:47,539 [INFO] Éxito: Se extrajo 'Emma' por Jane Austen
+2026-08-31 21:43:47,544 [INFO] Progreso: [72/100]
+2026-08-31 21:43:47,544 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/sobre-el-arte-de-contar-historias/
+2026-08-31 21:43:50,440 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:43:50,448 [INFO] Progreso: [73/100]
+2026-08-31 21:43:50,449 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/las-mil-y-una-noches-trad-de-juan-vernet/
+2026-08-31 21:43:53,434 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:43:53,443 [INFO] Progreso: [74/100]
+2026-08-31 21:43:53,443 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/las-hojas-caidas/
+2026-08-31 21:43:55,642 [INFO] Éxito: Se extrajo 'Las hojas caídas' por Wilkie Collins
+2026-08-31 21:43:55,651 [INFO] Progreso: [75/100]
+2026-08-31 21:43:55,651 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/llenos-de-vida/
+2026-08-31 21:43:59,489 [INFO] Éxito: Se extrajo 'Llenos de vida' por John Fante
+2026-08-31 21:43:59,497 [INFO] Progreso: [76/100]
+2026-08-31 21:43:59,497 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/hamlet/
+2026-08-31 21:44:01,557 [INFO] Éxito: Se extrajo 'Hamlet' por William Shakespeare
+2026-08-31 21:44:01,565 [INFO] Progreso: [77/100]
+2026-08-31 21:44:01,565 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/dafnis-y-cloe/
+2026-08-31 21:44:03,550 [INFO] Éxito: Se extrajo 'Dafnis y Cloe' por Longo
+2026-08-31 21:44:03,557 [INFO] Progreso: [78/100]
+2026-08-31 21:44:03,557 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-tienda-de-antiguedades/
+2026-08-31 21:44:05,420 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:44:05,431 [INFO] Progreso: [79/100]
+2026-08-31 21:44:05,431 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/anna-karenina-ed-alba-2010/
+2026-08-31 21:44:08,131 [INFO] Éxito: Se extrajo 'Anna Karénina (Ed. Alba 2010)' por León Tolstói
+2026-08-31 21:44:08,136 [INFO] Progreso: [80/100]
+2026-08-31 21:44:08,136 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-hombre-de-negro/
+2026-08-31 21:44:11,114 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:44:11,120 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 6.39 segundos...
+2026-08-31 21:44:17,518 [INFO] Progreso: [81/100]
+2026-08-31 21:44:17,518 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-rey-lear/
+2026-08-31 21:44:20,477 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:44:20,485 [INFO] Progreso: [82/100]
+2026-08-31 21:44:20,485 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-enfermo-imaginario/
+2026-08-31 21:44:23,409 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:44:23,419 [INFO] Progreso: [83/100]
+2026-08-31 21:44:23,420 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-grillo-del-hogar-ilustrado/
+2026-08-31 21:44:26,934 [INFO] Éxito: Se extrajo 'El grillo del hogar (Ilustrado)' por Charles Dickens
+2026-08-31 21:44:26,941 [INFO] Progreso: [84/100]
+2026-08-31 21:44:26,941 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-grande-de-oriente/
+2026-08-31 21:44:30,503 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:44:30,513 [INFO] Progreso: [85/100]
+2026-08-31 21:44:30,514 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/mas-alla-y-otros-cuentos/
+2026-08-31 21:44:33,475 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:44:33,481 [INFO] Progreso: [86/100]
+2026-08-31 21:44:33,482 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-abadia-de-northanger/
+2026-08-31 21:44:35,769 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:44:35,778 [INFO] Progreso: [87/100]
+2026-08-31 21:44:35,778 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-respuesta-es-no/
+2026-08-31 21:44:38,529 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:44:38,539 [INFO] Progreso: [88/100]
+2026-08-31 21:44:38,539 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/
+2026-08-31 21:44:41,395 [INFO] Éxito: Se extrajo 'Sin título' por Miguel Lago, Clara Fuertes, Mile Bluett, Beverley Watts, François Rabelais, María Zambrano, Saturnino Calleja, Shane Stevens, Carlos Laredo Verdejo, Pablo Rivero, Víctor Conde, Mile Bluett, Peter Sloterdijk, Oscar Wilde, José Urbano Martínez Carreras, András László, Lynn Morrison, Teo Palacios, María Teresa Álvarez, Mile Bluett, Michael Palmer, Edward E. Smith, Harold Brodkey, Gore Vidal
+2026-08-31 21:44:41,403 [INFO] Progreso: [89/100]
+2026-08-31 21:44:41,403 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/preparacion-del-actor/
+2026-08-31 21:44:43,440 [INFO] Éxito: Se extrajo 'Preparación del actor' por Konstantin Stanislavski
+2026-08-31 21:44:43,447 [INFO] Progreso: [90/100]
+2026-08-31 21:44:43,447 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/canciones-de-inocencia-y-de-experiencia/
+2026-08-31 21:44:46,564 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:44:46,574 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 6.77 segundos...
+2026-08-31 21:44:53,350 [INFO] Progreso: [91/100]
+2026-08-31 21:44:53,351 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-18-brumario-de-luis-bonaparte-version-ade/
+2026-08-31 21:44:56,339 [INFO] Éxito: Se extrajo 'El 18 Brumario de Luis Bonaparte (versión ADE)' por Karl Marx
+2026-08-31 21:44:56,345 [INFO] Progreso: [92/100]
+2026-08-31 21:44:56,345 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-peste/
+2026-08-31 21:44:59,996 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:45:00,007 [INFO] Progreso: [93/100]
+2026-08-31 21:45:00,007 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/nuestro-amigo-comun/
+2026-08-31 21:45:02,156 [INFO] Éxito: Se extrajo 'Nuestro amigo común' por Charles Dickens
+2026-08-31 21:45:02,164 [INFO] Progreso: [94/100]
+2026-08-31 21:45:02,164 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/macbeth/
+2026-08-31 21:45:05,272 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:45:05,279 [INFO] Progreso: [95/100]
+2026-08-31 21:45:05,279 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-apostolicos/
+2026-08-31 21:45:09,202 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:45:09,208 [INFO] Progreso: [96/100]
+2026-08-31 21:45:09,208 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/cuentos-de-amor-de-locura-y-de-muerte/
+2026-08-31 21:45:09,255 [ERROR] Fallo al extraer el libro https://ww3.lectulandia.co/book/cuentos-de-amor-de-locura-y-de-muerte/: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://ww3.lectulandia.co/book/cuentos-de-amor-de-locura-y-de-muerte/
+Call log:
+  - navigating to "https://ww3.lectulandia.co/book/cuentos-de-amor-de-locura-y-de-muerte/", waiting until "domcontentloaded"
+
+2026-08-31 21:45:09,256 [INFO] Progreso: [97/100]
+2026-08-31 21:45:09,256 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/zumalacarregui/
+2026-08-31 21:45:09,284 [ERROR] Fallo al extraer el libro https://ww3.lectulandia.co/book/zumalacarregui/: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://ww3.lectulandia.co/book/zumalacarregui/
+Call log:
+  - navigating to "https://ww3.lectulandia.co/book/zumalacarregui/", waiting until "domcontentloaded"
+
+2026-08-31 21:45:09,286 [INFO] Progreso: [98/100]
+2026-08-31 21:45:09,286 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/macbeth-una-tragedia-en-5-actos/
+2026-08-31 21:45:09,312 [ERROR] Fallo al extraer el libro https://ww3.lectulandia.co/book/macbeth-una-tragedia-en-5-actos/: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://ww3.lectulandia.co/book/macbeth-una-tragedia-en-5-actos/
+Call log:
+  - navigating to "https://ww3.lectulandia.co/book/macbeth-una-tragedia-en-5-actos/", waiting until "domcontentloaded"
+
+2026-08-31 21:45:09,313 [INFO] Progreso: [99/100]
+2026-08-31 21:45:09,313 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/tiempo-de-silencio/
+2026-08-31 21:45:09,340 [ERROR] Fallo al extraer el libro https://ww3.lectulandia.co/book/tiempo-de-silencio/: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://ww3.lectulandia.co/book/tiempo-de-silencio/
+Call log:
+  - navigating to "https://ww3.lectulandia.co/book/tiempo-de-silencio/", waiting until "domcontentloaded"
+
+2026-08-31 21:45:09,341 [INFO] Progreso: [100/100]
+2026-08-31 21:45:09,341 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/casa-de-munecas/
+2026-08-31 21:45:09,367 [ERROR] Fallo al extraer el libro https://ww3.lectulandia.co/book/casa-de-munecas/: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://ww3.lectulandia.co/book/casa-de-munecas/
+Call log:
+  - navigating to "https://ww3.lectulandia.co/book/casa-de-munecas/", waiting until "domcontentloaded"
+
+2026-08-31 21:45:09,369 [INFO] Lote de 10 completado. Pausa de cortesía prolongada (Enfriamiento) de 5.30 segundos...
+2026-08-31 21:45:14,677 [INFO] Fase de Control de Calidad: Validando e integrando dataset...
+2026-08-31 21:45:14,691 [INFO] Dataset consolidado finalizado con éxito en 'data/libros.csv'. Cantidad de registros válidos: 95
+2026-08-31 21:45:14,691 [INFO] Cerrando navegador...
+2026-08-31 21:45:14,728 [INFO] === PROCESO COMPLETADO EN 376.92 SEGUNDOS (6.28 MINUTOS) ===
+2026-08-31 21:46:20,098 [INFO] Iniciando navegador Chromium...
+2026-08-31 21:46:20,164 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/cuentos-de-amor-de-locura-y-de-muerte/
+2026-08-31 21:46:23,608 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:46:23,616 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/zumalacarregui/
+2026-08-31 21:46:26,890 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:46:26,898 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/macbeth-una-tragedia-en-5-actos/
+2026-08-31 21:46:29,388 [INFO] Éxito: Se extrajo 'Macbeth. Una tragedia en 5 actos' por William Shakespeare
+2026-08-31 21:46:29,392 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/tiempo-de-silencio/
+2026-08-31 21:46:32,465 [INFO] Éxito: Se extrajo 'Tiempo de silencio' por Luis Martín-Santos
+2026-08-31 21:46:32,472 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/casa-de-munecas/
+2026-08-31 21:46:34,779 [INFO] Éxito: Se extrajo 'Sin título' por Autor no especificado
+2026-08-31 21:53:09,558 [INFO] Iniciando navegador Chromium...
+2026-08-31 21:53:09,618 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-valle-del-terror/
+2026-08-31 21:53:12,445 [INFO] Éxito: Se extrajo 'El valle del terror' por Arthur Conan Doyle
+2026-08-31 21:53:12,451 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/julio-cesar/
+2026-08-31 21:53:15,079 [INFO] Éxito: Se extrajo 'Julio César' por William Shakespeare
+2026-08-31 21:53:15,086 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-peste/
+2026-08-31 21:53:19,040 [INFO] Éxito: Se extrajo 'La peste' por Albert Camus
+2026-08-31 21:53:54,103 [INFO] Iniciando navegador Chromium...
+2026-08-31 21:53:54,161 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-valle-del-terror/
+2026-08-31 21:53:56,834 [INFO] Éxito: Se extrajo 'El valle del terror' por Arthur Conan Doyle
+2026-08-31 21:53:56,839 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-periquillo-sarniento/
+2026-08-31 21:53:58,853 [INFO] Éxito: Se extrajo 'El Periquillo Sarniento' por José Joaquín Fernández de Lizardi
+2026-08-31 21:53:58,861 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/julio-cesar/
+2026-08-31 21:54:00,997 [INFO] Éxito: Se extrajo 'Julio César' por William Shakespeare
+2026-08-31 21:54:01,004 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/sin-nombre/
+2026-08-31 21:54:04,486 [INFO] Éxito: Se extrajo 'Sin nombre' por Wilkie Collins
+2026-08-31 21:54:04,494 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/primeras-canciones/
+2026-08-31 21:54:07,036 [INFO] Éxito: Se extrajo 'Primeras canciones' por Federico García Lorca
+2026-08-31 21:54:07,045 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/sherlock-holmes-la-coleccion-completa/
+2026-08-31 21:54:10,233 [INFO] Éxito: Se extrajo 'Sherlock Holmes. La colección completa' por Arthur Conan Doyle
+2026-08-31 21:54:10,240 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/juan-martin-el-empecinado/
+2026-08-31 21:54:12,991 [INFO] Éxito: Se extrajo 'Juan Martín el Empecinado' por Benito Pérez Galdós
+2026-08-31 21:54:12,999 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-candor-del-padre-brown/
+2026-08-31 21:54:15,781 [INFO] Éxito: Se extrajo 'El candor del padre Brown' por Gilbert Keith Chesterton
+2026-08-31 21:54:15,788 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-alcalde-de-zalamea/
+2026-08-31 21:54:20,716 [INFO] Éxito: Se extrajo 'El alcalde de Zalamea' por Pedro Calderón de la Barca
+2026-08-31 21:54:20,723 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/criton-trad-gredos/
+2026-08-31 21:54:23,328 [INFO] Éxito: Se extrajo 'Critón (Trad. Gredos)' por Platón
+2026-08-31 21:54:23,336 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-fantasma-de-la-opera/
+2026-08-31 21:54:26,282 [INFO] Éxito: Se extrajo 'El fantasma de la ópera' por Gastón Leroux
+2026-08-31 21:54:26,290 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/textos-fronterizos/
+2026-08-31 21:54:29,431 [INFO] Éxito: Se extrajo 'Textos fronterizos' por Horacio Quiroga
+2026-08-31 21:54:29,439 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/lisistrata/
+2026-08-31 21:54:32,439 [INFO] Éxito: Se extrajo 'Lisístrata' por Aristófanes
+2026-08-31 21:54:32,446 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/apologia-de-socrates/
+2026-08-31 21:54:36,139 [INFO] Éxito: Se extrajo 'Apología de Sócrates' por Platón
+2026-08-31 21:54:36,145 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/confesiones-de-un-bribon/
+2026-08-31 21:54:38,731 [INFO] Éxito: Se extrajo 'Confesiones de un bribón' por Wilkie Collins
+2026-08-31 21:54:38,738 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-pequena-dorrit/
+2026-08-31 21:54:40,963 [INFO] Éxito: Se extrajo 'La pequeña Dorrit' por Charles Dickens
+2026-08-31 21:54:40,969 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-pazos-de-ulloa/
+2026-08-31 21:54:44,043 [INFO] Éxito: Se extrajo 'Los pazos de Ulloa' por Emilia Pardo Bazán
+2026-08-31 21:54:44,050 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-secreto-de-sarah/
+2026-08-31 21:54:47,637 [INFO] Éxito: Se extrajo 'El secreto de Sarah' por Wilkie Collins
+2026-08-31 21:54:47,644 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-barrio-maldito/
+2026-08-31 21:54:49,623 [INFO] Éxito: Se extrajo 'El barrio maldito' por Félix Urabayen
+2026-08-31 21:54:49,631 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/relatos-2-1927-1949/
+2026-08-31 21:54:52,595 [INFO] Éxito: Se extrajo 'Relatos 2 (1927-1949)' por Bertolt Brecht
+2026-08-31 21:54:52,602 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-casa-de-shakespeare/
+2026-08-31 21:54:56,173 [INFO] Éxito: Se extrajo 'La casa de Shakespeare' por Benito Pérez Galdós
+2026-08-31 21:54:56,181 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/del-asesinato-considerado-como-una-de-las-bellas-artes/
+2026-08-31 21:54:58,901 [INFO] Éxito: Se extrajo 'Del asesinato considerado como una de las bellas artes' por Thomas De Quincey
+2026-08-31 21:54:58,907 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-desierto-y-otros-cuentos/
+2026-08-31 21:55:01,229 [INFO] Éxito: Se extrajo 'El desierto y otros cuentos' por Horacio Quiroga
+2026-08-31 21:55:01,235 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-vida-es-sueno/
+2026-08-31 21:55:04,985 [INFO] Éxito: Se extrajo 'La vida es sueño' por Pedro Calderón de la Barca
+2026-08-31 21:55:04,993 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-capote-trad-victor-gallego/
+2026-08-31 21:55:08,998 [INFO] Éxito: Se extrajo 'El capote (Trad. Víctor Gallego)' por Nikolái Gógol
+2026-08-31 21:55:09,004 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-contrato-social/
+2026-08-31 21:55:12,945 [INFO] Éxito: Se extrajo 'El contrato social' por Jean-Jacques Rousseau
+2026-08-31 21:55:12,953 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-amor-el-dandismo-y-la-intriga/
+2026-08-31 21:55:15,463 [INFO] Éxito: Se extrajo 'El amor, el dandismo y la intriga' por Pío Baroja
+2026-08-31 21:55:15,469 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/doble-engano/
+2026-08-31 21:55:18,738 [INFO] Éxito: Se extrajo 'Doble engaño' por Wilkie Collins
+2026-08-31 21:55:18,745 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-salvaje-y-otros-cuentos/
+2026-08-31 21:55:22,932 [INFO] Éxito: Se extrajo 'El salvaje y otros cuentos' por Horacio Quiroga
+2026-08-31 21:55:22,940 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/sobre-el-arte-de-contar-historias/
+2026-08-31 21:55:25,145 [INFO] Éxito: Se extrajo 'Sobre el arte de contar historias' por Horacio Quiroga
+2026-08-31 21:55:25,152 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/las-mil-y-una-noches-trad-de-juan-vernet/
+2026-08-31 21:55:27,977 [INFO] Éxito: Se extrajo 'Las mil y una noches (trad. de Juan Vernet)' por Anónimo
+2026-08-31 21:55:27,985 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-tienda-de-antiguedades/
+2026-08-31 21:55:31,350 [INFO] Éxito: Se extrajo 'La tienda de antigüedades' por Charles Dickens
+2026-08-31 21:55:31,357 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-hombre-de-negro/
+2026-08-31 21:55:33,629 [INFO] Éxito: Se extrajo 'El hombre de negro' por Wilkie Collins
+2026-08-31 21:55:33,637 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-rey-lear/
+2026-08-31 21:55:37,345 [INFO] Éxito: Se extrajo 'El rey Lear' por William Shakespeare
+2026-08-31 21:55:37,351 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-enfermo-imaginario/
+2026-08-31 21:55:41,221 [INFO] Éxito: Se extrajo 'El enfermo imaginario' por Molière
+2026-08-31 21:55:41,228 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-grande-de-oriente/
+2026-08-31 21:55:44,116 [INFO] Éxito: Se extrajo 'El Grande Oriente' por Benito Pérez Galdós
+2026-08-31 21:55:44,124 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/mas-alla-y-otros-cuentos/
+2026-08-31 21:55:46,340 [INFO] Éxito: Se extrajo 'Más allá y otros cuentos' por Horacio Quiroga
+2026-08-31 21:55:46,348 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-abadia-de-northanger/
+2026-08-31 21:55:48,896 [INFO] Éxito: Se extrajo 'La abadía de Northanger' por Jane Austen
+2026-08-31 21:55:48,902 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-respuesta-es-no/
+2026-08-31 21:55:51,776 [INFO] Éxito: Se extrajo 'La respuesta es no' por Wilkie Collins
+2026-08-31 21:55:51,781 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/canciones-de-inocencia-y-de-experiencia/
+2026-08-31 21:55:55,524 [INFO] Éxito: Se extrajo 'Canciones de inocencia y de experiencia' por William Blake
+2026-08-31 21:55:55,531 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-peste/
+2026-08-31 21:55:58,897 [INFO] Éxito: Se extrajo 'La peste' por Albert Camus
+2026-08-31 21:55:58,904 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/macbeth/
+2026-08-31 21:56:02,744 [INFO] Éxito: Se extrajo 'Macbeth' por William Shakespeare
+2026-08-31 21:56:02,751 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-apostolicos/
+2026-08-31 21:56:05,705 [INFO] Éxito: Se extrajo 'Los apostólicos' por Benito Pérez Galdós
+2026-08-31 21:56:05,712 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/cuentos-de-amor-de-locura-y-de-muerte/
+2026-08-31 21:56:08,028 [INFO] Éxito: Se extrajo 'Cuentos de amor de locura y de muerte' por Horacio Quiroga
+2026-08-31 21:56:08,035 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/zumalacarregui/
+2026-08-31 21:56:10,983 [INFO] Éxito: Se extrajo 'Zumalacárregui' por Benito Pérez Galdós
+2026-08-31 21:56:10,990 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/casa-de-munecas/
+2026-08-31 21:56:14,682 [INFO] Éxito: Se extrajo 'Casa de muñecas' por Henrik Ibsen

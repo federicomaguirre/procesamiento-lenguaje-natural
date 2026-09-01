@@ -1,0 +1,126 @@
+REPORTE DE CORRECCIÓN DE DATOS FALTANTES - data/libros.csv
+Fecha: 2026-08-31
+
+============================================================
+1. QUÉ SE DETECTÓ
+============================================================
+Sobre un total de 100 libros extraídos (corrida con --limit 100),
+se encontraron:
+
+- 46 filas con "titulo" = "Sin título" y "autores" = "Autor no
+  especificado" (los demás campos: sinopsis, géneros, portada,
+  sí se habían extraído correctamente en la mayoría de los casos).
+- 1 fila inválida: url_libro = "https://ww3.lectulandia.co/book/",
+  que no corresponde a la ficha de un libro individual sino al
+  "Listado completo de libros" del sitio.
+
+============================================================
+2. ANÁLISIS / CAUSA RAÍZ
+============================================================
+a) Datos faltantes (46 filas):
+   Se descartó que fuera un bug del selector CSS del scraper
+   (book_container.select_one("#title h1")). Verificación:
+     - Se volvió a descargar el HTML en vivo de varias de las
+       URLs afectadas (ej. el-valle-del-terror, julio-cesar,
+       la-peste) y la estructura #book > #title > h1 estaba
+       presente y correcta.
+     - Se reejecutó la función scrape_book_details() del propio
+       scraper.py contra esas mismas URLs de forma aislada
+       (fuera de la corrida masiva) y el título/autor se
+       extrajeron sin problema.
+   Conclusión: la causa fue un problema TRANSITORIO durante la
+   corrida masiva de 100 libros consecutivos (probablemente
+   rate-limiting o un challenge/interstitial anti-bot de
+   Cloudflare activado por el volumen y ritmo de requests), que
+   hizo que el servidor devolviera para ~46% de las páginas un
+   HTML incompleto sin el bloque #title. No es un defecto
+   permanente de la página ni del selector.
+
+b) Fila inválida (url_libro terminando en "/book/" sin slug):
+   Bug real en extract_book_urls() (src/scraper.py): el filtro
+   solo exige que la URL contenga "/book/" y no contenga
+   "/page/", por lo que capturó también el enlace al listado
+   general de libros del sitio (que también matchea ese patrón),
+   no un libro individual. Esa fila no tiene datos que "reparar"
+   porque no representa un libro real.
+
+============================================================
+3. SOLUCIÓN APLICADA
+============================================================
+- Se creó un script de reintento (usa las mismas funciones
+  init_playwright / scrape_book_details de src/scraper.py) que:
+    1. Eliminó del dataset la fila inválida (url_libro =
+       ".../book/").
+    2. Volvió a visitar, una por una, las 46 URLs con datos
+       faltantes y sobrescribió esas filas en el DataFrame con
+       los datos correctamente extraídos.
+    3. Guardó el resultado pisando directamente data/libros.csv
+       (mismo archivo, mismo formato utf-8-sig).
+
+Resultado del reintento:
+    Filas inválidas eliminadas: 1
+    Reparadas exitosamente:     46 / 46
+    Siguen fallando:            0
+    Total de filas final:       99 (antes: 100)
+
+Verificación post-fix:
+    Filas con datos faltantes: 0
+    Duplicados por url_libro:  0
+
+Libros reparados (título | autor/es):
+- El valle del terror | Arthur Conan Doyle
+- El Periquillo Sarniento | José Joaquín Fernández de Lizardi
+- Julio César | William Shakespeare
+- Sin nombre | Wilkie Collins
+- Primeras canciones | Federico García Lorca
+- Sherlock Holmes. La colección completa | Arthur Conan Doyle
+- Juan Martín el Empecinado | Benito Pérez Galdós
+- El candor del padre Brown | Gilbert Keith Chesterton
+- El alcalde de Zalamea | Pedro Calderón de la Barca
+- Critón (Trad. Gredos) | Platón
+- El fantasma de la ópera | Gastón Leroux
+- Textos fronterizos | Horacio Quiroga
+- Lisístrata | Aristófanes
+- Apología de Sócrates | Platón
+- Confesiones de un bribón | Wilkie Collins
+- La pequeña Dorrit | Charles Dickens
+- Los pazos de Ulloa | Emilia Pardo Bazán
+- El secreto de Sarah | Wilkie Collins
+- El barrio maldito | Félix Urabayen
+- Relatos 2 (1927-1949) | Bertolt Brecht
+- La casa de Shakespeare | Benito Pérez Galdós
+- Del asesinato considerado como una de las bellas artes | Thomas De Quincey
+- El desierto y otros cuentos | Horacio Quiroga
+- La vida es sueño | Pedro Calderón de la Barca
+- El capote (Trad. Víctor Gallego) | Nikolái Gógol
+- El contrato social | Jean-Jacques Rousseau
+- El amor, el dandismo y la intriga | Pío Baroja
+- Doble engaño | Wilkie Collins
+- El salvaje y otros cuentos | Horacio Quiroga
+- Sobre el arte de contar historias | Horacio Quiroga
+- Las mil y una noches (trad. de Juan Vernet) | Anónimo
+- La tienda de antigüedades | Charles Dickens
+- El hombre de negro | Wilkie Collins
+- El rey Lear | William Shakespeare
+- El enfermo imaginario | Molière
+- El Grande Oriente | Benito Pérez Galdós
+- Más allá y otros cuentos | Horacio Quiroga
+- La abadía de Northanger | Jane Austen
+- La respuesta es no | Wilkie Collins
+- Canciones de inocencia y de experiencia | William Blake
+- La peste | Albert Camus
+- Macbeth | William Shakespeare
+- Los apostólicos | Benito Pérez Galdós
+- Cuentos de amor de locura y de muerte | Horacio Quiroga
+- Zumalacárregui | Benito Pérez Galdós
+- Casa de muñecas | Henrik Ibsen
+
+============================================================
+4. PENDIENTE / RECOMENDACIÓN A FUTURO
+============================================================
+El bug de extract_book_urls() que permitió colar la URL del
+listado general (".../book/") sigue presente en src/scraper.py
+y podría repetirse en corridas futuras. No se modificó el
+código todavía porque no fue pedido explícitamente en esta
+tarea; se resolvió el síntoma (se eliminó la fila) pero no la
+causa en el código del scraper.

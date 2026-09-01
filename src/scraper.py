@@ -45,8 +45,8 @@ def parse_arguments():
     parser.add_argument(
         "--limit",
         type=int,
-        default=50,
-        help="Cantidad exacta de libros a extraer. Por defecto es 50."
+        default=100,
+        help="Cantidad exacta de libros a extraer. Por defecto es 100."
     )
     parser.add_argument(
         "--output",
@@ -117,13 +117,17 @@ def extract_book_urls(context, base_url):
                 # Normalizar a URL absoluta
                 full_url = urljoin(target_url, href)
                 
-                # Un enlace a un libro de Lectulandia típicamente contiene '/book/' y no es de paginación ni login
+                # Un enlace a un libro de Lectulandia típicamente contiene '/book/<slug>/' y no es de paginación ni login
                 if "/book/" in full_url and "/page/" not in full_url and "lectulandia.co" in full_url:
                     # Normalizar eliminando parámetros o hashes si los hubiera
                     clean_url = full_url.split("#")[0].split("?")[0]
                     # Asegurar que termina en barra
                     if not clean_url.endswith("/"):
                         clean_url += "/"
+
+                    # Descartar el listado general (".../book/") que no es una ficha de libro individual
+                    if clean_url.rstrip("/").endswith("/book"):
+                        continue
                     
                     if clean_url not in book_urls:
                         book_urls.add(clean_url)
@@ -246,7 +250,12 @@ def main():
     
     # Crear carpeta data de salida si no existe
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
-    
+
+    # Eliminar salida previa para evitar acumular registros de corridas anteriores
+    if os.path.exists(args.output):
+        logger.info(f"Eliminando archivo de salida previo '{args.output}' para iniciar una corrida limpia.")
+        os.remove(args.output)
+
     # Configurar semilla de aleatoriedad para reproducibilidad
     random.seed(args.seed)
     
