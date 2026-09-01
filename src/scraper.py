@@ -165,29 +165,33 @@ def scrape_book_details(context, url, category_origin):
         
         html_content = page.content()
         soup = BeautifulSoup(html_content, "html.parser")
-        
-        # 1. Título (Búsqueda en h1 del encabezado)
-        title_tag = soup.find("h1") or soup.select_one("#title") or soup.select_one(".book-title")
+
+        # El contenedor principal de la ficha del libro (evita capturar el header
+        # del sitio y los widgets de la barra lateral, que también matchean estos selectores)
+        book_container = soup.find(id="book") or soup
+
+        # 1. Título (Búsqueda en el h1 dentro del bloque #title de la ficha)
+        title_tag = book_container.select_one("#title h1") or soup.select_one(".book-title")
         title = title_tag.get_text(strip=True) if title_tag else "Sin título"
-        
+
         # En Lectulandia, los libros a veces tienen el título con el autor: "Título · Autor"
         # Limpiamos el título si contiene el separador "·" o " - "
         if " · " in title:
             title = title.split(" · ")[0].strip()
-            
-        # 2. Autores (Enlaces que contienen /autor/)
-        author_tags = soup.select('a[href*="/autor/"]')
+
+        # 2. Autores (Enlaces que contienen /autor/, acotado a la ficha del libro)
+        author_tags = book_container.select('a[href*="/autor/"]')
         authors_list = [a.get_text(strip=True) for a in author_tags if a.get_text(strip=True)]
         authors = ", ".join(authors_list) if authors_list else "Autor no especificado"
-        
-        # 3. Géneros (Enlaces que contienen /genero/)
-        genre_tags = soup.select('a[href*="/genero/"]')
+
+        # 3. Géneros (Enlaces que contienen /genero/, acotado a la ficha del libro)
+        genre_tags = book_container.select('a[href*="/genero/"]')
         genres_list = [g.get_text(strip=True) for g in genre_tags if g.get_text(strip=True)]
         # Excluimos de los géneros el valor de búsqueda principal si es necesario o los guardamos todos
         genres = ", ".join(genres_list) if genres_list else "Sin género"
-        
-        # 4. Serie o saga (Enlaces que contienen /serie/)
-        serie_tag = soup.select_one('a[href*="/serie/"]')
+
+        # 4. Serie o saga (Enlaces que contienen /serie/, acotado a la ficha del libro)
+        serie_tag = book_container.select_one('a[href*="/serie/"]')
         serie = "No aplica"
         if serie_tag:
             serie_text = serie_tag.get_text(strip=True)
@@ -210,8 +214,8 @@ def scrape_book_details(context, url, category_origin):
         # Limpieza de espacios en blanco duplicados o saltos de línea molestos
         sinopsis = re.sub(r'\s+', ' ', sinopsis).strip()
         
-        # 6. Portada (Opcional - Imagen principal en #portada o div.portada)
-        cover_tag = soup.select_one("#portada img") or soup.select_one(".portada img") or soup.select_one(".book-cover img")
+        # 6. Portada (Opcional - Imagen principal en el bloque #cover de la ficha)
+        cover_tag = book_container.select_one("#cover img") or soup.select_one(".book-cover img")
         url_portada = urljoin(url, cover_tag["src"]) if cover_tag and cover_tag.get("src") else "No disponible"
         
         # Estructurar registro de salida
@@ -334,7 +338,7 @@ def main():
             
     end_time = time.time()
     elapsed = end_time - start_time
-    logger.info(f"=== PROCESO COMPLETADO EN {elapsed:.2f} SEGUNDOS ({~(elapsed/60):.2f} MINUTOS) ===")
+    logger.info(f"=== PROCESO COMPLETADO EN {elapsed:.2f} SEGUNDOS ({elapsed/60:.2f} MINUTOS) ===")
 
 
 if __name__ == "__main__":
