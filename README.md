@@ -7,8 +7,10 @@ El objetivo principal de este proyecto es construir un corpus lingüístico estr
 ---
 
 ## 👥 Integrantes del Grupo
-*   **Nombre y Apellido** (Legajo: XX-XXXX)
-*   *Nota: Puedes completar los nombres e información de los integrantes de tu grupo en esta sección antes de realizar la entrega final.*
+*   Franco Venesia
+*   Marisa Zappala
+*   Agustin Amarquardt
+*   Federico Aguirre
 
 ---
 
@@ -31,7 +33,35 @@ El objetivo principal de este proyecto es construir un corpus lingüístico estr
 ├── docs/
 │   └── diseno_extraccion.md <-- Documento de análisis previo y selectores HTML
 └── src/
-    └── scraper.py           <-- Código fuente documentado del web scraper
+    ├── scraper.py           <-- Código fuente documentado del web scraper
+    ├── procesar_datos.py    <-- Corrige el CSV: agrega `id` y convierte autores/generos a arrays
+    └── recomendador.py      <-- Recomendador de libros (TF-IDF + similitud coseno)
+```
+
+---
+
+## 📊 Metadata: Descripción de Variables del Dataset
+
+El archivo `data/libros.csv` queda normalizado mediante `src/procesar_datos.py`, que agrega un identificador único por libro y convierte los campos multivaluados (`autores`, `generos`) en arrays. Las variables finales del dataset son:
+
+| Variable | Tipo | Descripción |
+| :--- | :--- | :--- |
+| `id` | `int` | Identificador numérico único y secuencial del libro (0 a N-1), generado a partir del índice del DataFrame. |
+| `titulo` | `str` | Título completo del libro. |
+| `autores` | `list[str]` | Autor o autores del libro. Se almacena como array (`libros['autores'].str.split(',')`), permitiendo más de un autor por ficha. |
+| `generos` | `list[str]` | Géneros asignados al libro. Se almacena como array (`libros['generos'].str.split(',')`), permitiendo múltiples géneros por ficha. |
+| `serie` | `str` | Serie o saga a la que pertenece el libro. Vale `"No aplica"` cuando el libro es autoconclusivo. |
+| `sinopsis` | `str` | Texto completo de la sinopsis o descripción del libro. |
+| `url_libro` | `str` | URL absoluta de la ficha individual del libro en el sitio de origen. |
+| `categoria_origen` | `str` | Categoría del catálogo desde la que se extrajo el libro (fijo: `Clásico`). |
+| `fecha_extraccion` | `str` (ISO `YYYY-MM-DD HH:MM:SS`) | Fecha y hora en que se extrajo el registro. |
+| `url_portada` | `str` | URL absoluta de la imagen de portada del libro. |
+
+> **Nota sobre `autores` y `generos`:** al guardarse en CSV, los arrays se serializan como el literal de lista de Python (ej. `"['Charles Dickens', 'Wilkie Collins']"`). Para reconstruirlos como listas reales al leer el archivo, usar `ast.literal_eval` (tal como hace `src/recomendador.py` al cargar el dataset).
+
+Para regenerar esta normalización sobre un CSV recién extraído con el scraper:
+```bash
+python src/procesar_datos.py --csv data/libros.csv
 ```
 
 ---

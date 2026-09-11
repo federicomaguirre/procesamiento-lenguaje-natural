@@ -5,6 +5,7 @@ Recomendador de libros basado en un algoritmo frecuentista (TF-IDF + similitud c
 Conecta con el dataset generado por scraper.py (data/libros.csv).
 """
 
+import ast
 import os
 import re
 import argparse
@@ -26,6 +27,24 @@ STOPWORDS_ES = {
 }
 
 TEXT_COLUMNS = ["titulo", "autores", "generos", "serie", "sinopsis"]
+ARRAY_COLUMNS = ("autores", "generos")
+
+
+def parsear_array(valor):
+    """Convierte el literal de lista guardado en el CSV (ej. "['A', 'B']") a list."""
+    if isinstance(valor, list):
+        return valor
+    try:
+        return ast.literal_eval(valor)
+    except (ValueError, SyntaxError):
+        return [valor]
+
+
+def texto_de_campo(valor):
+    """Aplana listas (autores/generos) a texto plano para armar el corpus."""
+    if isinstance(valor, list):
+        return " ".join(valor)
+    return "" if pd.isna(valor) else str(valor)
 
 
 def normalizar(texto):
@@ -40,8 +59,11 @@ def tokenizar(texto):
 
 
 def construir_corpus(df):
-    combinado = df[TEXT_COLUMNS].fillna("").agg(" ".join, axis=1)
-    return [tokenizar(texto) for texto in combinado]
+    filas = (
+        " ".join(texto_de_campo(valor) for valor in fila)
+        for fila in df[TEXT_COLUMNS].itertuples(index=False)
+    )
+    return [tokenizar(texto) for texto in filas]
 
 
 def calcular_tf(tokens, vocabulario):
@@ -68,7 +90,11 @@ def calcular_idf(corpus_tokens, vocabulario):
 
 class RecomendadorTFIDF:
     def __init__(self, csv_path):
-        self.df = pd.read_csv(csv_path, encoding="utf-8-sig")
+        self.df = pd.read_csv(
+            csv_path,
+            encoding="utf-8-sig",
+            converters={columna: parsear_array for columna in ARRAY_COLUMNS},
+        )
         corpus_tokens = construir_corpus(self.df)
 
         vocab_ordenado = sorted({token for tokens in corpus_tokens for token in tokens})
@@ -124,8 +150,10 @@ def main():
 
     print(f"\nRecomendaciones para: \"{consulta}\"\n")
     for rank, (_, libro) in enumerate(resultados.iterrows(), 1):
-        print(f"{rank}. {libro['titulo']} — {libro['autores']} (similitud: {libro['similitud']:.3f})")
-        print(f"   Géneros: {libro['generos']}")
+        autores = texto_de_campo(libro["autores"])
+        generos = texto_de_campo(libro["generos"])
+        print(f"{rank}. [ID {libro['id']}] {libro['titulo']} — {autores} (similitud: {libro['similitud']:.3f})")
+        print(f"   Géneros: {generos}")
         print(f"   {libro['url_libro']}\n")
 
 
