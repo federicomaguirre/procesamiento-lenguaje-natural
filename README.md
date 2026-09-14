@@ -24,18 +24,18 @@ El objetivo principal de este proyecto es construir un corpus lingüístico estr
 
 ## 📁 Estructura del Repositorio
 
-```text
 ├── README.md                 <-- Presentación del proyecto y guía de uso (este archivo)
 ├── requirements.txt         <-- Dependencias requeridas para el proyecto
 ├── extraction.log           <-- Archivo de log generado durante la ejecución (opcional)
+├── diseno_extraccion.md     <-- Documento de análisis previo y selectores HTML
+├── diseno_recomendador.md   <-- Documento de diseño y registro de decisiones del recomendador
 ├── data/
 │   └── libros.csv           <-- Dataset estructurado obtenido con los 50 registros
-├── docs/
-│   └── diseno_extraccion.md <-- Documento de análisis previo y selectores HTML
 └── src/
     ├── scraper.py           <-- Código fuente documentado del web scraper
     ├── procesar_datos.py    <-- Corrige el CSV: agrega `id` y convierte autores/generos a arrays
-    └── recomendador.py      <-- Recomendador de libros (TF-IDF + similitud coseno)
+    ├── recomendador.py      <-- Recomendador de libros (TF-IDF artesanal con NumPy)
+    └── recomendador_sklearn.py <-- Recomendador de libros (TF-IDF + similitud coseno con scikit-learn)
 ```
 
 ---
@@ -126,6 +126,28 @@ python src/scraper.py --limit 50
 ```bash
 # Extraer 75 libros con una semilla de aleatoriedad específica y mostrando el navegador de forma interactiva:
 python src/scraper.py --limit 75 --seed 1234 --headless False
+```
+
+---
+
+### Recomendador de Libros (`src/recomendador_sklearn.py`)
+
+El sistema cuenta con un recomendador semántico basado en **scikit-learn** (`TfidfVectorizer` + `cosine_similarity`) sobre una representación enriquecida de cada obra (título, autores, géneros, serie y sinopsis), cuyas especificaciones técnicas están detalladas en [diseno_recomendador.md](diseno_recomendador.md).
+
+#### 1. Modo Interactivo (Exploración continua)
+Inicia un prompt conversacional en consola para buscar libros hasta escribir `salir` o `q`:
+```bash
+python src/recomendador_sklearn.py
+```
+
+#### 2. Modo Consulta Directa (CLI)
+Permite pasar la búsqueda directamente por parámetro junto con la cantidad deseada de recomendaciones:
+```bash
+# Búsqueda por argumento temático
+python src/recomendador_sklearn.py --consulta "novela de aventuras espaciales de Julio Verne" --top 5
+
+# Búsqueda por género y tópicos
+python src/recomendador_sklearn.py --consulta "cuentos de terror gótico y vampiros" --top 3
 ```
 
 ---
