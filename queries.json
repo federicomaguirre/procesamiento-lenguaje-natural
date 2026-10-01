@@ -4,83 +4,152 @@
     "query": "investigaciones de detectives resolviendo misterios y crimenes mediante deduccion analitica",
     "tipo": "semantica_lexica",
     "descripcion": "Busca historias clásicas de misterio policial centradas en detectives analíticos como Sherlock Holmes y el Padre Brown.",
-    "relevant_ids": [0, 14, 18]
+    "relevant_ids": [
+      0,
+      14,
+      18
+    ]
   },
   {
     "id": "Q02",
     "query": "amores contrariados matrimonios de conveniencia y bailes en la alta sociedad inglesa",
     "tipo": "semantica_tematica",
     "descripcion": "Novelas románticas de costumbres y conflictos sociales en la Inglaterra de la Regencia (Jane Austen).",
-    "relevant_ids": [7, 27, 70, 85]
+    "relevant_ids": [
+      7,
+      27,
+      70,
+      85
+    ]
   },
   {
     "id": "Q03",
     "query": "tragedias sobre la ambicion desmedida el asesinato de reyes y la traicion por la corona",
     "tipo": "semantica_tematica",
     "descripcion": "Dramas y tragedias teatrales clásicas centradas en la tiranía, conspiraciones regicidas y luchas de poder (Shakespeare).",
-    "relevant_ids": [8, 75, 80, 92, 96]
+    "relevant_ids": [
+      8,
+      75,
+      80,
+      92,
+      96,
+      102
+    ],
+    "nota_anotacion": "Se agrega Electra (102), libro nuevo de la ampliación del corpus: venganza por el asesinato del rey Agamenón y usurpación del trono."
   },
   {
     "id": "Q04",
     "query": "episodios de las guerras y conspiraciones politicas en la historia de espana del siglo XIX",
     "tipo": "semantica_historica",
     "descripcion": "Novelas históricas sobre las guerras carlistas, la ocupación francesa y los conflictos de la España decimonónica (Galdós).",
-    "relevant_ids": [16, 19, 22, 28, 51, 83, 93, 95]
+    "relevant_ids": [
+      16,
+      19,
+      22,
+      28,
+      35,
+      39,
+      51,
+      64,
+      83,
+      93,
+      95,
+      104,
+      118
+    ],
+    "nota_anotacion": "Se agregan los Baroja de 'Memorias de un hombre de acción' (35, 39, 64, 104): conspiraciones y guerras carlistas en la España de 1830. Faltaban en la anotación original. Se agrega Bailén (118), Episodio Nacional nuevo."
   },
   {
     "id": "Q05",
     "query": "relatos tragicos sobre la locura el delirio y la muerte acechando en la selva",
     "tipo": "semantica_tematica",
     "descripcion": "Cuentos trágicos de supervivencia, obsesión mental y hostilidad de la naturaleza salvaje (Horacio Quiroga).",
-    "relevant_ids": [55, 59, 69, 84, 94]
+    "relevant_ids": [
+      55,
+      59,
+      69,
+      84,
+      94
+    ]
   },
   {
     "id": "Q06",
     "query": "dialogos filosoficos sobre la justicia las leyes el estado y la condena de socrates",
     "tipo": "lexica_conceptual",
     "descripcion": "Tratados y diálogos clásicos de filosofía política, ética civil y el deber ante la ley (Platón y Rousseau).",
-    "relevant_ids": [23, 33, 41, 63]
+    "relevant_ids": [
+      23,
+      33,
+      41,
+      63
+    ]
   },
   {
     "id": "Q07",
     "query": "brote epidemico contagio colectivo y confinamiento que revela la miseria moral de una ciudad",
     "tipo": "semantica_abstracta",
     "descripcion": "Novela sobre una plaga mortal y las reacciones éticas y psicológicas de una población aislada (La peste de Camus).",
-    "relevant_ids": [90]
+    "relevant_ids": [
+      90
+    ]
   },
   {
     "id": "Q08",
     "query": "cuentos de terror psicologico tumbas obsesiones morbosas y espectros sobrenaturales",
     "tipo": "semantica_tematica",
     "descripcion": "Relatos góticos y de terror psicológico con presencia de decadencia, muerte y fantasmas (Poe, Wilde, Leroux).",
-    "relevant_ids": [24, 25, 67]
+    "relevant_ids": [
+      10,
+      24,
+      25,
+      67,
+      105
+    ],
+    "nota_anotacion": "Se agrega Vampiros (10), que faltaba, y Cuentos malévolos (105), libro nuevo: relatos de muerte y lo sobrenatural en la línea de Poe."
   },
   {
     "id": "Q09",
     "query": "viajes magicos criaturas fabulosas y aventuras epicas orientales",
     "tipo": "semantica_tematica",
     "descripcion": "Fábulas, mitología tradicional y travesías fantásticas del folclore oriental (Las mil y una noches, Viaje al Oeste).",
-    "relevant_ids": [20, 48, 72]
+    "relevant_ids": [
+      20,
+      48,
+      72
+    ]
   },
   {
     "id": "Q10",
     "query": "sátiras y comedias teatrales que ridiculizan la hipocresia social y las costumbres burguesas",
     "tipo": "semantica_tematica",
     "descripcion": "Piezas teatrales y ensayos cómicos que satirizan instituciones, la medicina o la política mediante humor agudo (Molière, Aristófanes).",
-    "relevant_ids": [32, 54, 81]
+    "relevant_ids": [
+      32,
+      54,
+      81
+    ]
   },
   {
     "id": "Q11",
     "query": "injusticias sociales y ninos desamparados sobreviviendo en el londres victoriano",
     "tipo": "semantica_tematica",
     "descripcion": "Dramas victorianos centrados en la pobreza, la orfandad y la dureza del entorno industrial londinense (Dickens).",
-    "relevant_ids": [1, 38, 77, 91]
+    "relevant_ids": [
+      1,
+      38,
+      77,
+      91,
+      116
+    ],
+    "nota_anotacion": "Se agrega David Copperfield (116), libro nuevo. Es relevante por el libro en sí (niño huérfano y explotado en Londres), aunque la sinopsis no lo menciona."
   },
   {
     "id": "Q12_ZERO_OVERLAP",
     "query": "forajido justiciero arquero que despoja a tiranos feudales para auxiliar desamparados",
     "tipo": "cero_solapamiento_lexico",
     "descripcion": "Consulta diseñada con vocabulario sinónimo y afín que NO comparte ningún unigrama con el texto de la sinopsis ni metadatos de Robin Hood. TF-IDF arroja similitud 0.0 obligatoriamente.",
-    "relevant_ids": [2]
+    "relevant_ids": [
+      2
+    ]
   }
 ]
