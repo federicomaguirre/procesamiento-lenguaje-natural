@@ -1,0 +1,264 @@
+{
+  "precision": {
+    "TF-IDF": {
+      "P@1": 0.4167,
+      "P@3": 0.2778,
+      "P@5": 0.2667,
+      "P@10": 0.2083
+    },
+    "W2V propio": {
+      "P@1": 0.3333,
+      "P@3": 0.3056,
+      "P@5": 0.2667,
+      "P@10": 0.2
+    },
+    "SBW": {
+      "P@1": 0.5833,
+      "P@3": 0.3889,
+      "P@5": 0.3333,
+      "P@10": 0.225
+    },
+    "SBERT": {
+      "P@1": 0.5833,
+      "P@3": 0.4722,
+      "P@5": 0.3833,
+      "P@10": 0.2583
+    },
+    "Azar (esperado)": {
+      "P@1": 0.0368,
+      "P@3": 0.0368,
+      "P@5": 0.0368,
+      "P@10": 0.0368
+    },
+    "Azar (simulado, media)": {
+      "P@1": 0.0365,
+      "P@3": 0.0365,
+      "P@5": 0.0365,
+      "P@10": 0.0365
+    },
+    "Azar (simulado, p95)": {
+      "P@1": 0.1667,
+      "P@3": 0.0833,
+      "P@5": 0.0833,
+      "P@10": 0.0667
+    },
+    "Techo (ideal)": {
+      "P@1": 1.0,
+      "P@3": 0.8889,
+      "P@5": 0.7333,
+      "P@10": 0.4167
+    }
+  },
+  "hibrida": {
+    "FTS Postgres (ts_rank)": {
+      "P@1": 0.3333,
+      "P@3": 0.3611,
+      "P@5": 0.3,
+      "P@10": 0.2
+    },
+    "SBERT (SQL)": {
+      "P@1": 0.5833,
+      "P@3": 0.4722,
+      "P@5": 0.3833,
+      "P@10": 0.2583
+    },
+    "Híbrido RRF": {
+      "P@1": 0.5,
+      "P@3": 0.4722,
+      "P@5": 0.35,
+      "P@10": 0.2417
+    },
+    "TF-IDF (TP1)": {
+      "P@1": 0.4167,
+      "P@3": 0.2778,
+      "P@5": 0.2667,
+      "P@10": 0.2083
+    },
+    "Azar (simulado, p95)": {
+      "P@1": 0.1667,
+      "P@3": 0.0833,
+      "P@5": 0.0833,
+      "P@10": 0.0667
+    }
+  },
+  "p5_por_consulta": {
+    "Q01": {
+      "relevantes": 3,
+      "solapamiento": 0.125,
+      "TF-IDF": 0.2,
+      "W2V propio": 0.0,
+      "SBW": 0.4,
+      "SBERT": 0.6,
+      "techo P@5": 0.6,
+      "azar P@5": 0.025
+    },
+    "Q02": {
+      "relevantes": 4,
+      "solapamiento": 0.0,
+      "TF-IDF": 0.0,
+      "W2V propio": 0.0,
+      "SBW": 0.2,
+      "SBERT": 0.0,
+      "techo P@5": 0.8,
+      "azar P@5": 0.033
+    },
+    "Q03": {
+      "relevantes": 6,
+      "solapamiento": 0.429,
+      "TF-IDF": 0.4,
+      "W2V propio": 0.6,
+      "SBW": 0.6,
+      "SBERT": 0.4,
+      "techo P@5": 1.0,
+      "azar P@5": 0.05
+    },
+    "Q04": {
+      "relevantes": 13,
+      "solapamiento": 0.75,
+      "TF-IDF": 1.0,
+      "W2V propio": 1.0,
+      "SBW": 1.0,
+      "SBERT": 1.0,
+      "techo P@5": 1.0,
+      "azar P@5": 0.108
+    },
+    "Q05": {
+      "relevantes": 5,
+      "solapamiento": 0.429,
+      "TF-IDF": 0.4,
+      "W2V propio": 0.6,
+      "SBW": 0.2,
+      "SBERT": 0.8,
+      "techo P@5": 1.0,
+      "azar P@5": 0.042
+    },
+    "Q06": {
+      "relevantes": 4,
+      "solapamiento": 0.667,
+      "TF-IDF": 0.8,
+      "W2V propio": 0.2,
+      "SBW": 0.6,
+      "SBERT": 0.8,
+      "techo P@5": 0.8,
+      "azar P@5": 0.033
+    },
+    "Q07": {
+      "relevantes": 1,
+      "solapamiento": 0.111,
+      "TF-IDF": 0.2,
+      "W2V propio": 0.2,
+      "SBW": 0.2,
+      "SBERT": 0.2,
+      "techo P@5": 0.2,
+      "azar P@5": 0.008
+    },
+    "Q08": {
+      "relevantes": 5,
+      "solapamiento": 0.125,
+      "TF-IDF": 0.2,
+      "W2V propio": 0.2,
+      "SBW": 0.4,
+      "SBERT": 0.4,
+      "techo P@5": 1.0,
+      "azar P@5": 0.042
+    },
+    "Q09": {
+      "relevantes": 3,
+      "solapamiento": 0.143,
+      "TF-IDF": 0.0,
+      "W2V propio": 0.4,
+      "SBW": 0.2,
+      "SBERT": 0.2,
+      "techo P@5": 0.6,
+      "azar P@5": 0.025
+    },
+    "Q10": {
+      "relevantes": 3,
+      "solapamiento": 0.0,
+      "TF-IDF": 0.0,
+      "W2V propio": 0.0,
+      "SBW": 0.0,
+      "SBERT": 0.0,
+      "techo P@5": 0.6,
+      "azar P@5": 0.025
+    },
+    "Q11": {
+      "relevantes": 5,
+      "solapamiento": 0.143,
+      "TF-IDF": 0.0,
+      "W2V propio": 0.0,
+      "SBW": 0.2,
+      "SBERT": 0.2,
+      "techo P@5": 1.0,
+      "azar P@5": 0.042
+    },
+    "Q12_ZERO_OVERLAP": {
+      "relevantes": 1,
+      "solapamiento": 0.0,
+      "TF-IDF": 0.0,
+      "W2V propio": 0.0,
+      "SBW": 0.0,
+      "SBERT": 0.0,
+      "techo P@5": 0.2,
+      "azar P@5": 0.008
+    }
+  },
+  "comparacion_tfidf": {
+    "W2V propio": {
+      "Δ P@5 vs TF-IDF": -0.0,
+      "gana": 3.0,
+      "empata": 7.0,
+      "pierde": 2.0,
+      "p-valor": 1.0
+    },
+    "SBW": {
+      "Δ P@5 vs TF-IDF": 0.0667,
+      "gana": 6.0,
+      "empata": 4.0,
+      "pierde": 2.0,
+      "p-valor": 0.2891
+    },
+    "SBERT": {
+      "Δ P@5 vs TF-IDF": 0.1167,
+      "gana": 5.0,
+      "empata": 7.0,
+      "pierde": 0.0,
+      "p-valor": 0.0625
+    }
+  },
+  "distribucion_similitudes": {
+    "TF-IDF": {
+      "media": 0.018,
+      "desvío": 0.034,
+      "mín": 0.0,
+      "p5": 0.0,
+      "p95": 0.047,
+      "máx": 0.979
+    },
+    "W2V propio": {
+      "media": 0.633,
+      "desvío": 0.077,
+      "mín": 0.351,
+      "p5": 0.506,
+      "p95": 0.753,
+      "máx": 1.0
+    },
+    "SBW": {
+      "media": 0.887,
+      "desvío": 0.04,
+      "mín": 0.669,
+      "p5": 0.809,
+      "p95": 0.939,
+      "máx": 1.0
+    },
+    "SBERT": {
+      "media": 0.32,
+      "desvío": 0.104,
+      "mín": 0.009,
+      "p5": 0.168,
+      "p95": 0.485,
+      "máx": 0.98
+    }
+  },
+  "truncados": 109
+}
