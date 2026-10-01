@@ -187,22 +187,26 @@ Antes de la entrega final, se validó la integridad del archivo resultante (`dat
 En esta segunda etapa del proyecto se profundiza en la representación vectorial densa continua mediante **Word Embeddings** (Word2Vec propio y pre-entrenado), modelos de lenguaje oracionales (**Sentence-BERT**), persistencia relacional con **pgvector en Supabase**, evaluación cuantitativa sobre benchmark manual y **Búsqueda Híbrida** con **Reciprocal Rank Fusion (RRF)**.
 
 ### 📦 Entregables del TP2
-1. **`TP2_marquardt_aguirre_venesia_zappala.ipynb`**: Notebook principal completamente comentado, estructurado y autocontenido.
-2. **`queries.json`**: Conjunto de evaluación curado con 12 consultas temáticas, juicios de relevancia (*ground truth*) y consulta testigo obligatoria sin solapamiento léxico.
-3. **`informe.pdf`**: Informe técnico de 3 páginas respondiendo a las preguntas de producción, evaluación empírica, límites de la métrica y casos de fallo.
-4. **`schema_pgvector.sql`**: Esquema DDL para PostgreSQL/Supabase con tablas independientes por dimensionalidad (300D y 512D), índices HNSW (`vector_cosine_ops`), FTS en español y funciones de búsqueda híbrida nativa.
-5. **`diseno_tp2_embeddings_busqueda_semantica.md`**: Registro formal de diseño y fundamentación teórica de la Unidad 2.
+1. **`TP2_marquardt_aguirre_venesia_zappala.ipynb`**: notebook ejecutado, con salidas visibles.
+2. **`queries.json`**: 12 consultas con sus libros relevantes, incluida una sin solapamiento léxico (Q12). Los cambios de anotación al ampliar el corpus quedan en el campo `nota_anotacion`.
+3. **`informe.pdf`** (y su fuente `informe.md`): informe de 3 páginas.
+4. **Base en Supabase** con las tablas `libros_sbw` (300D) y `libros_sbert` (512D).
+
+Archivos de soporte:
+*   `schema_pgvector.sql`: tablas por modelo, índices HNSW (`vector_cosine_ops`), full-text en español sin tildes y funciones `buscar_sbert`, `buscar_sbw`, `buscar_fts` y `buscar_hibrido_rrf`.
+*   `src/poblar_supabase.py`: crea el esquema y carga los embeddings guardados en `embeddings/`. El notebook usa estas mismas funciones.
+*   `src/ampliar_corpus.py`: agrega libros nuevos al final del CSV sin tocar los ids existentes (el corpus pasó de 99 a 120 libros).
+*   `embeddings/`: vectores de cada modelo en `.npy`. `resultados/metricas.json`: métricas de la última ejecución.
 
 ### ⚙️ Guía de Ejecución Rápida
-1. Instalar dependencias requeridas:
+1. Instalar dependencias:
    ```bash
    pip install -r requirements.txt
    ```
-2. Ejecutar el Notebook:
-   * Puede abrirse y ejecutarse en **Google Colab** o localmente con Jupyter / VS Code.
-   * Para conectar a Supabase, exportar la variable de entorno antes de ejecutar:
-     ```bash
-     export SUPABASE_DB_URL="postgresql://postgres.[REF]:[PASS]@[HOST]:6543/postgres"
-     ```
-   * En caso de no proveer credenciales, el notebook ejecuta en **modo local emulado**, garantizando la visualización de resultados sin interrupciones.
-
+2. Crear un archivo `.env` en la raíz (está en `.gitignore`, no se sube) con la connection string de Supabase. Usar la de **Session pooler** (puerto 5432): con el Transaction pooler (6543) los `SET` del notebook no se mantienen entre consultas.
+   ```bash
+   SUPABASE_DB_URL=postgresql://postgres.[REF]:[PASS]@[HOST]:5432/postgres
+   ```
+   En Colab, cargarla en *Secretos* (🔑) con el nombre `SUPABASE_DB_URL`.
+3. Ejecutar el notebook completo. La primera vez descarga SBW (~1,1 GB) a `modelos/` (también ignorado por git).
+4. Para cargar la base sin correr el notebook: `python src/poblar_supabase.py`.

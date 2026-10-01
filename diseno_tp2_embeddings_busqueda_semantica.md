@@ -52,7 +52,7 @@ Se generan dos versiones persistentes de los textos en memoria y base de datos:
 
 ### 3.1 Justificación de Hiperparámetros del Modelo Propio
 Se entrena un modelo Word2Vec utilizando Gensim sobre las sinopsis tokenizadas del catálogo:
-* **`vector_size = 100`:** Dado que el corpus es pequeño (99 libros, $\approx 25.000$ tokens totales), fijar 300 dimensiones conduciría a una dispersión excesiva y sobreajuste del espacio latente. Una dimensionalidad de 100 ofrece suficiente capacidad representativa sin sobredimensionar la matriz de pesos.
+* **`vector_size = 100`:** Dado que el corpus es pequeño (120 libros, $\approx 10.600$ tokens después de sacar stopwords), fijar 300 dimensiones conduciría a una dispersión excesiva y sobreajuste del espacio latente. Una dimensionalidad de 100 ofrece suficiente capacidad representativa sin sobredimensionar la matriz de pesos.
 * **`window = 5`:** Ventana simétrica estándar que captura relaciones colocacionales y de coocurrencia temática local inmediata en oraciones en español.
 * **`min_count = 2`:** Al ser un corpus acotado, fijar un umbral alto (como `min_count=5`) eliminaría sustantivos propios y tecnicismos cruciales para discriminar géneros.
 * **`sg = 1` (Skip-gram):** La teoría de la Unidad 2 señala que CBOW promedia las palabras del contexto para predecir la central, favoreciendo términos muy frecuentes. Skip-gram, en cambio, utiliza la palabra central para predecir cada contexto de forma independiente, demostrando un rendimiento superior para aprender representaciones útiles de palabras infrecuentes en corpus chicos.
@@ -81,7 +81,7 @@ $$v_{\text{doc}} = \frac{1}{|D|} \sum_{w \in D} v_w$$
 Se adopta **`distiluse-base-multilingual-cased-v1`** de la librería `sentence-transformers`:
 * **Arquitectura:** Red siamesa/triplete basada en DistilBERT multilingüe (6 capas de Transformer, 512 dimensiones de salida), pre-entrenada con funciones de pérdida de contraste para optimizar directamente la similitud coseno entre oraciones.
 * **Límite de tokens (`max_seq_length`):** **128 tokens**.
-* **Diagnóstico de truncamiento:** Las sinopsis del corpus poseen una longitud mediana de 872 caracteres ($\approx 160$ palabras), lo cual genera típicamente entre 140 y 300 tokens de subpalabras (WordPiece/cased). En consecuencia, un porcentaje significativo de los libros experimenta truncamiento en la capa de atención de SBERT, descartando los párrafos finales de la descripción. Este fenómeno se cuantifica explícitamente en el notebook.
+* **Diagnóstico de truncamiento (medido en el notebook con el tokenizer del modelo):** el texto de cada libro (título, autores, serie y sinopsis) tiene una mediana de 220 tokens. **109 de 120 libros (91 %) superan el límite** y la mitad de los tokens del corpus nunca llega al modelo: en la práctica SBERT ve el título, el autor y las primeras oraciones de la sinopsis.
 
 ---
 
@@ -89,11 +89,11 @@ Se adopta **`distiluse-base-multilingual-cased-v1`** de la librería `sentence-t
 
 Para evaluar la discriminabilidad de los espacios generados:
 1. **Distribución de Similitudes entre Pares Aleatorios:**
-   * Se muestrean $1000$ pares de documentos aleatorios y se computa su similitud coseno.
+   * Se calcula la similitud coseno de todos los pares de libros distintos (7.140 pares).
    * Se reporta media, desviación estándar y rango.
    * *Criterio de calidad:* Un espacio colapsado donde todos los pares arrojan similitud entre $0.85$ y $0.98$ carece de resolución discriminativa; un espacio de calidad distribuye sus pares no relacionados cerca de $0.0$ o con varianza apreciable.
 2. **Proyección 2D (PCA vs. t-SNE):**
-   * **t-SNE:** Se ajusta el parámetro `perplexity` (típicamente $\approx 15-30$ para 99 puntos). **Advertencia metodológica:** t-SNE preserva exclusivamente vecindades locales; las distancias entre clusters distantes no reflejan distancias métricas en el espacio original y las densidades relativas son arbitrarias.
+   * **t-SNE:** Se ajusta el parámetro `perplexity` (se usa 15 para 120 puntos). **Advertencia metodológica:** t-SNE preserva exclusivamente vecindades locales; las distancias entre clusters distantes no reflejan distancias métricas en el espacio original y las densidades relativas son arbitrarias.
    * **PCA:** Técnica lineal que maximiza la varianza. **Advertencia metodológica:** Se reporta el porcentaje de varianza explicada acumulada por $PC_1 + PC_2$ (usualmente $< 25\%$ en espacios de 512D). Una superposición en la proyección 2D no implica falta de separabilidad en las 510 dimensiones restantes.
 
 ---
@@ -102,7 +102,7 @@ Para evaluar la discriminabilidad de los espacios generados:
 
 ### 6.1 Separación de Esquemas por Modelo
 Se crean dos tablas relacionales independientes:
-* `libros_w2v_sbw` con columna `embedding vector(300)`
+* `libros_sbw` con columna `embedding vector(300)` (promedio de vectores SBW)
 * `libros_sbert` con columna `embedding vector(512)`
 
 **Fundamentación de por qué no pueden convivir dos dimensiones en la misma columna indexada:**
@@ -124,7 +124,7 @@ WITH (m = 16, ef_construction = 64);
 ### 6.3 Manejo de Vectores Nulos o No Finitos
 Se implementa una función de saneamiento previo a la inserción SQL:
 * Comprobación estricta de valores `NaN`, `Inf` o vector nulo (norma cero).
-* Los registros que no generen embeddings válidos son descartados o imputados antes de alcanzar el `INSERT`, garantizando el cumplimiento de los criterios de evaluación.
+* Los registros que no generen embeddings válidos se descartan antes del `INSERT` (no se imputan) y la tabla además tiene un `CHECK (vector_norm(embedding) > 0)`, garantizando el cumplimiento de los criterios de evaluación.
 
 ---
 
@@ -136,7 +136,7 @@ La similitud semántica y el filtrado por metadatos se resuelven nativamente en 
 SELECT id, titulo, autores, generos, 
        1 - (embedding <=> %(query_vector)s::vector) AS similitud
 FROM libros_sbert
-WHERE (%(filtro_genero)s IS NULL OR generos::text ILIKE '%%' || %(filtro_genero)s || '%%')
+WHERE (%(filtro_genero)s IS NULL OR %(filtro_genero)s = ANY(generos))
 ORDER BY embedding <=> %(query_vector)s::vector ASC
 LIMIT %(top_k)s;
 ```
@@ -147,7 +147,7 @@ Al combinar un índice HNSW con un predicado `WHERE` restrictivo surgen dos prob
 2. **Pre-filtering sobre grafos aproximados:** Si se intenta restringir la navegación exclusivamente a los nodos válidos, el subgrafo inducido puede quedar disconexo o presentar pocos caminos viables, provocando que la búsqueda golpee mínimos locales lejanos al óptimo real.
 
 **Estrategias de mitigación:**
-* **Iterative Index Scan (nativo en pgvector $\ge 0.5.0$):** El índice sigue expandiendo la frontera de búsqueda en el grafo hasta reunir los $k$ elementos que superen el filtro.
+* **Iterative Index Scan (`hnsw.iterative_scan`, disponible desde pgvector 0.8.0):** El índice sigue expandiendo la frontera de búsqueda en el grafo hasta reunir los $k$ elementos que superen el filtro.
 * **Aumento temporal de `hnsw.ef_search`:** Aumentar `SET hnsw.ef_search = 100` durante consultas filtradas para examinar una vecindad sustancialmente más amplia.
 * **Exact Scan Fallback:** Para condiciones con selectividad menor al $10\%$, deshabilitar el índice vectorial (`SET enable_indexscan = off;`) y ejecutar escaneo secuencial exacto asistido por índices B-Tree/GIN sobre los metadatos.
 
@@ -159,14 +159,14 @@ Se define el conjunto de evaluación en `queries.json` con más de 10 consultas 
 * Consultas léxicas directas (orientadas a palabras clave y nombres de autores).
 * Consultas semánticas abstractas (temáticas y conflictos humanos).
 * **Consulta de prueba sin solapamiento léxico ("piratas vs. bucaneros"):**
-  * Consulta: *"un relato de bucaneros y forajidos en bosques legendarios"*
+  * Consulta (Q12): *"forajido justiciero arquero que despoja a tiranos feudales para auxiliar desamparados"*
   * Documento relevante: *Robin Hood* (ID 2).
-  * En la sinopsis no aparecen los términos "bucaneros" ni "forajidos", por lo que TF-IDF obtiene similitud exactamente $0.0$, mientras que los modelos semánticos recuperan el libro en los primeros lugares.
+  * Ningún término de la consulta aparece en la sinopsis, así que TF-IDF da similitud 0 a todos los libros y no recupera nada. **Resultado:** los modelos semánticos tampoco la resuelven (SBERT pone a Robin Hood 12.º), porque las palabras elegidas son poco frecuentes y el tokenizer las parte en fragmentos. Con la misma idea en palabras comunes, SBERT lo pone 1.º. Ver el análisis en el notebook (5.5) y en el informe.
 
 Métrica de evaluación:
 $$\text{Precision@}k = \frac{\sum_{i=1}^k \mathbb{I}(\text{doc}_i \in \text{Relevantes})}{k}$$
-* Se computa para $k \in \{1, 3, 5\}$.
-* Se contrasta contra una línea de base de **selección al azar (piso de azar)** calculada sobre el total de libros del catálogo.
+* Se computa para $k \in \{1, 3, 5, 10\}$, junto con el techo de cada consulta ($\min(|R|, k)/k$) y un test de permutación pareado contra TF-IDF.
+* Se contrasta contra una línea de base de **selección al azar (piso de azar)** calculada sobre el total de libros del catálogo ($|R|/N$), verificada con 10.000 rankings aleatorios (se reporta también su percentil 95).
 
 ---
 
@@ -182,4 +182,4 @@ Para evitar los problemas de normalización de escalas dispares entre puntuacion
 $$\text{RRF\_Score}(d) = \frac{1}{k_{\text{RRF}} + \text{rank}_{\text{lex}}(d)} + \frac{1}{k_{\text{RRF}} + \text{rank}_{\text{sem}}(d)}$$
 donde $k_{\text{RRF}} = 60$ es una constante de suavizado que penaliza caídas pronunciadas en el ranking superior sin castigar excesivamente documentos relevantes situados en posiciones medias.
 
-Se evalúa empíricamente si la combinación RRF supera a cada componente individual en $\text{Precision@}k$.
+Se evalúa empíricamente si la combinación RRF supera a cada componente individual en $\text{Precision@}k$. **Resultado:** supera al canal léxico (P@5 0,35 contra 0,30) pero no a SBERT solo (0,38): el canal léxico es débil en las consultas con poco solapamiento y mete ruido en el top-5.
