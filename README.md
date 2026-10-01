@@ -179,3 +179,30 @@ Antes de la entrega final, se validó la integridad del archivo resultante (`dat
 *   [x] **Presencia de Sinopsis:** La totalidad de las fichas seleccionadas cuenta con una sinopsis extensa de contenido descriptivo limpio.
 *   [x] **Formato unificado:** Se limpiaron todos los espacios dobles, tabuladores y saltos de línea innecesarios en las sinopsis y títulos para un almacenamiento tabular óptimo.
 *   [x] **Muestreo:** El archivo final contiene exactamente los 50 libros requeridos de la categoría "Clásico".
+
+---
+
+# 🚀 Trabajo Práctico N.º 2: Representación Vectorial de Texto y Búsqueda Semántica
+
+En esta segunda etapa del proyecto se profundiza en la representación vectorial densa continua mediante **Word Embeddings** (Word2Vec propio y pre-entrenado), modelos de lenguaje oracionales (**Sentence-BERT**), persistencia relacional con **pgvector en Supabase**, evaluación cuantitativa sobre benchmark manual y **Búsqueda Híbrida** con **Reciprocal Rank Fusion (RRF)**.
+
+### 📦 Entregables del TP2
+1. **`TP2_marquardt_aguirre_venesia_zappala.ipynb`**: Notebook principal completamente comentado, estructurado y autocontenido.
+2. **`queries.json`**: Conjunto de evaluación curado con 12 consultas temáticas, juicios de relevancia (*ground truth*) y consulta testigo obligatoria sin solapamiento léxico.
+3. **`informe.pdf`**: Informe técnico de 3 páginas respondiendo a las preguntas de producción, evaluación empírica, límites de la métrica y casos de fallo.
+4. **`schema_pgvector.sql`**: Esquema DDL para PostgreSQL/Supabase con tablas independientes por dimensionalidad (300D y 512D), índices HNSW (`vector_cosine_ops`), FTS en español y funciones de búsqueda híbrida nativa.
+5. **`diseno_tp2_embeddings_busqueda_semantica.md`**: Registro formal de diseño y fundamentación teórica de la Unidad 2.
+
+### ⚙️ Guía de Ejecución Rápida
+1. Instalar dependencias requeridas:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Ejecutar el Notebook:
+   * Puede abrirse y ejecutarse en **Google Colab** o localmente con Jupyter / VS Code.
+   * Para conectar a Supabase, exportar la variable de entorno antes de ejecutar:
+     ```bash
+     export SUPABASE_DB_URL="postgresql://postgres.[REF]:[PASS]@[HOST]:6543/postgres"
+     ```
+   * En caso de no proveer credenciales, el notebook ejecuta en **modo local emulado**, garantizando la visualización de resultados sin interrupciones.
+
