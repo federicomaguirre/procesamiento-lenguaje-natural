@@ -1,168 +1,161 @@
 -- ==============================================================================
--- TRABAJO PRÁCTICO N.º 2: PERSISTENCIA E INDEXACIÓN VECTORIAL EN POSTGRESQL / SUPABASE
--- Asignatura: Procesamiento del Lenguaje Natural (TUIA - UNR)
+-- TP2 - Persistencia e indexado vectorial en PostgreSQL / Supabase (pgvector)
+-- Procesamiento del Lenguaje Natural - TUIA - FCEIA - UNR
 -- ==============================================================================
 
--- 1. Habilitar la extensión de pgvector
 CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS unaccent;
 
--- 2. Limpieza de tablas previas si existen (opcional durante desarrollo)
-DROP TABLE IF EXISTS libros_w2v_sbw CASCADE;
+-- Configuración de full-text en español que además ignora acentos.
+-- Las consultas de queries.json están escritas sin tildes ("crimenes", "espana"),
+-- como las tipearía un usuario; sin unaccent el canal léxico no matchea "crímenes".
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_ts_config WHERE cfgname = 'spanish_unaccent') THEN
+        CREATE TEXT SEARCH CONFIGURATION spanish_unaccent (COPY = spanish);
+        ALTER TEXT SEARCH CONFIGURATION spanish_unaccent
+            ALTER MAPPING FOR hword, hword_part, word WITH unaccent, spanish_stem;
+    END IF;
+END $$;
+
+DROP TABLE IF EXISTS libros_sbw CASCADE;
 DROP TABLE IF EXISTS libros_sbert CASCADE;
 
 -- ------------------------------------------------------------------------------
--- 3. Tabla para Word2Vec (Spanish Billion Words - SBW-300: 300 dimensiones)
+-- Una tabla por modelo. La columna vector(n) tiene dimensión fija: un vector de
+-- 300 y uno de 512 no pueden compartir columna, y aunque se usara vector sin
+-- dimensión, el índice HNSW exige que todas las filas tengan la misma (y la
+-- distancia entre espacios distintos no está definida).
 -- ------------------------------------------------------------------------------
--- Explanación técnica: Se crea una tabla específica para vectores de 300D.
--- No pueden convivir vectores de 300D y 512D en la misma columna indexada porque
--- el tipo vector(n) exige dimensionalidad afín fija y las métricas de distancia
--- (euclidiana, coseno) requieren formalmente que ambos vectores residan en el mismo R^n.
-CREATE TABLE libros_w2v_sbw (
-    id INTEGER PRIMARY KEY,
-    titulo TEXT NOT NULL,
-    autores TEXT[],
-    generos TEXT[],
-    serie TEXT,
-    sinopsis TEXT,
-    url_libro TEXT,
-    embedding VECTOR(300) NOT NULL
+
+-- Familia 1: promedio de word vectors pre-entrenados (SBW-vectors-300-min5)
+CREATE TABLE libros_sbw (
+    id         INTEGER PRIMARY KEY,
+    titulo     TEXT NOT NULL,
+    autores    TEXT[],
+    generos    TEXT[],
+    serie      TEXT,
+    sinopsis   TEXT,
+    url_libro  TEXT,
+    embedding  VECTOR(300) NOT NULL,
+    -- Segunda barrera después de la validación en Python: nada de vectores nulos
+    CONSTRAINT sbw_vector_no_nulo CHECK (vector_norm(embedding) > 0)
 );
 
--- Índice HNSW con opclass 'vector_cosine_ops' para búsqueda por distancia coseno (<=>)
-CREATE INDEX IF NOT EXISTS idx_libros_w2v_hnsw 
-ON libros_w2v_sbw 
-USING hnsw (embedding vector_cosine_ops)
-WITH (m = 16, ef_construction = 64);
-
--- ------------------------------------------------------------------------------
--- 4. Tabla para Sentence-BERT (distiluse-base-multilingual-cased-v1: 512 dimensiones)
--- ------------------------------------------------------------------------------
+-- Familia 2: modelo de oración (distiluse-base-multilingual-cased-v1)
 CREATE TABLE libros_sbert (
-    id INTEGER PRIMARY KEY,
-    titulo TEXT NOT NULL,
-    autores TEXT[],
-    generos TEXT[],
-    serie TEXT,
-    sinopsis TEXT,
-    url_libro TEXT,
-    -- Columna de texto completo generada para Búsqueda Híbrida nativa (tsvector en español)
-    fts_doc TSVECTOR GENERATED ALWAYS AS (
-        to_tsvector('spanish', coalesce(titulo, '') || ' ' || coalesce(sinopsis, ''))
+    id         INTEGER PRIMARY KEY,
+    titulo     TEXT NOT NULL,
+    autores    TEXT[],
+    generos    TEXT[],
+    serie      TEXT,
+    sinopsis   TEXT,
+    url_libro  TEXT,
+    -- Columna de full-text para la búsqueda híbrida (parte avanzada)
+    fts_doc    TSVECTOR GENERATED ALWAYS AS (
+        to_tsvector('spanish_unaccent'::regconfig,
+                    coalesce(titulo, '') || ' ' || coalesce(sinopsis, ''))
     ) STORED,
-    embedding VECTOR(512) NOT NULL
+    embedding  VECTOR(512) NOT NULL,
+    CONSTRAINT sbert_vector_no_nulo CHECK (vector_norm(embedding) > 0)
 );
 
--- Índice HNSW con opclass 'vector_cosine_ops' para el modelo SBERT
-CREATE INDEX IF NOT EXISTS idx_libros_sbert_hnsw 
-ON libros_sbert 
-USING hnsw (embedding vector_cosine_ops)
-WITH (m = 16, ef_construction = 64);
+-- Índices HNSW. Todas las consultas usan el operador <=> (distancia coseno),
+-- así que la opclass es vector_cosine_ops. Con vector_l2_ops el planificador
+-- no puede usar el índice para ORDER BY embedding <=> ...
+CREATE INDEX idx_libros_sbw_hnsw ON libros_sbw
+    USING hnsw (embedding vector_cosine_ops) WITH (m = 16, ef_construction = 64);
+CREATE INDEX idx_libros_sbert_hnsw ON libros_sbert
+    USING hnsw (embedding vector_cosine_ops) WITH (m = 16, ef_construction = 64);
 
--- Índice GIN para acelerar las consultas léxicas de Full-Text Search
-CREATE INDEX IF NOT EXISTS idx_libros_sbert_fts 
-ON libros_sbert 
-USING gin (fts_doc);
-
--- Índice GIN sobre géneros para filtros selectivos por metadata
-CREATE INDEX IF NOT EXISTS idx_libros_sbert_generos 
-ON libros_sbert 
-USING gin (generos);
+-- Filtro por metadata (género) y full-text
+CREATE INDEX idx_libros_sbw_generos   ON libros_sbw   USING gin (generos);
+CREATE INDEX idx_libros_sbert_generos ON libros_sbert USING gin (generos);
+CREATE INDEX idx_libros_sbert_fts     ON libros_sbert USING gin (fts_doc);
 
 -- ------------------------------------------------------------------------------
--- 5. Función SQL para Búsqueda Semántica Pura con Filtro por Metadata
+-- Búsqueda semántica con filtro opcional por género (similitud resuelta en SQL)
 -- ------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION buscar_semantico(
-    query_vector VECTOR(512),
-    top_k INT DEFAULT 5,
-    filtro_genero TEXT DEFAULT NULL
-)
-RETURNS TABLE (
-    id INT,
-    titulo TEXT,
-    autores TEXT[],
-    generos TEXT[],
-    sinopsis TEXT,
-    similitud FLOAT
-)
-LANGUAGE sql
-STABLE
-AS $$
-    SELECT 
-        l.id,
-        l.titulo,
-        l.autores,
-        l.generos,
-        l.sinopsis,
-        (1 - (l.embedding <=> query_vector))::FLOAT AS similitud
+CREATE OR REPLACE FUNCTION buscar_sbert(query_vector VECTOR(512), top_k INT DEFAULT 5,
+                                        filtro_genero TEXT DEFAULT NULL)
+RETURNS TABLE (id INT, titulo TEXT, generos TEXT[], similitud FLOAT)
+LANGUAGE sql STABLE AS $$
+    SELECT l.id, l.titulo, l.generos, (1 - (l.embedding <=> query_vector))::FLOAT
     FROM libros_sbert l
-    WHERE (filtro_genero IS NULL OR filtro_genero = ANY(l.generos))
-    ORDER BY l.embedding <=> query_vector ASC
+    WHERE filtro_genero IS NULL OR filtro_genero = ANY(l.generos)
+    ORDER BY l.embedding <=> query_vector
+    LIMIT top_k;
+$$;
+
+CREATE OR REPLACE FUNCTION buscar_sbw(query_vector VECTOR(300), top_k INT DEFAULT 5,
+                                      filtro_genero TEXT DEFAULT NULL)
+RETURNS TABLE (id INT, titulo TEXT, generos TEXT[], similitud FLOAT)
+LANGUAGE sql STABLE AS $$
+    SELECT l.id, l.titulo, l.generos, (1 - (l.embedding <=> query_vector))::FLOAT
+    FROM libros_sbw l
+    WHERE filtro_genero IS NULL OR filtro_genero = ANY(l.generos)
+    ORDER BY l.embedding <=> query_vector
     LIMIT top_k;
 $$;
 
 -- ------------------------------------------------------------------------------
--- 6. Función SQL para Búsqueda Híbrida con Reciprocal Rank Fusion (RRF)
+-- Ranking léxico con el full-text nativo (ts_rank).
+-- plainto_tsquery une los términos con AND: una consulta de 10 palabras casi
+-- nunca matchea entera. Se reemplaza & por | para que cada término sume.
 -- ------------------------------------------------------------------------------
--- Combina el ranking léxico (ts_rank) y el ranking semántico (distancia coseno <=>).
--- Aplica la fórmula estándar de RRF: Score = 1/(k + rank_lex) + 1/(k + rank_sem)
-CREATE OR REPLACE FUNCTION buscar_hibrido_rrf(
-    query_text TEXT,
-    query_embedding VECTOR(512),
-    top_k INT DEFAULT 5,
-    filtro_genero TEXT DEFAULT NULL,
-    rrf_k INT DEFAULT 60
-)
-RETURNS TABLE (
-    id INT,
-    titulo TEXT,
-    autores TEXT[],
-    generos TEXT[],
-    sinopsis TEXT,
-    rank_lexico BIGINT,
-    rank_semantico BIGINT,
-    rrf_score FLOAT
-)
-LANGUAGE sql
-STABLE
-AS $$
-    WITH candidatos_lexicos AS (
-        SELECT 
-            l.id,
-            ROW_NUMBER() OVER (ORDER BY ts_rank(l.fts_doc, plainto_tsquery('spanish', query_text)) DESC) AS rank_lex
-        FROM libros_sbert l
-        WHERE (filtro_genero IS NULL OR filtro_genero = ANY(l.generos))
-          AND l.fts_doc @@ plainto_tsquery('spanish', query_text)
-        LIMIT 50
+CREATE OR REPLACE FUNCTION consulta_or(query_text TEXT)
+RETURNS tsquery LANGUAGE sql IMMUTABLE AS $$
+    SELECT NULLIF(replace(plainto_tsquery('spanish_unaccent'::regconfig, query_text)::text,
+                          '&', '|'), '')::tsquery;
+$$;
+
+CREATE OR REPLACE FUNCTION buscar_fts(query_text TEXT, top_k INT DEFAULT 5)
+RETURNS TABLE (id INT, titulo TEXT, rank_fts FLOAT)
+LANGUAGE sql STABLE AS $$
+    SELECT l.id, l.titulo, ts_rank(l.fts_doc, consulta_or(query_text))::FLOAT
+    FROM libros_sbert l
+    WHERE l.fts_doc @@ consulta_or(query_text)
+    ORDER BY 3 DESC, l.id
+    LIMIT top_k;
+$$;
+
+-- ------------------------------------------------------------------------------
+-- Búsqueda híbrida: Reciprocal Rank Fusion entre ts_rank y distancia coseno.
+-- score(d) = 1/(rrf_k + rank_lexico) + 1/(rrf_k + rank_semantico)
+-- Cada canal ordena ANTES de cortar en n_candidatos (un LIMIT sin ORDER BY
+-- devolvería filas arbitrarias).
+-- ------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION buscar_hibrido_rrf(query_text TEXT, query_vector VECTOR(512),
+                                              top_k INT DEFAULT 5, filtro_genero TEXT DEFAULT NULL,
+                                              rrf_k INT DEFAULT 60, n_candidatos INT DEFAULT 50)
+RETURNS TABLE (id INT, titulo TEXT, rank_lexico BIGINT, rank_semantico BIGINT, rrf_score FLOAT)
+LANGUAGE sql STABLE AS $$
+    WITH lexico AS (
+        SELECT c.id, ROW_NUMBER() OVER (ORDER BY c.r DESC, c.id) AS rk
+        FROM (
+            SELECT l.id, ts_rank(l.fts_doc, consulta_or(query_text)) AS r
+            FROM libros_sbert l
+            WHERE l.fts_doc @@ consulta_or(query_text)
+              AND (filtro_genero IS NULL OR filtro_genero = ANY(l.generos))
+            ORDER BY r DESC, l.id
+            LIMIT n_candidatos
+        ) c
     ),
-    candidatos_semanticos AS (
-        SELECT 
-            l.id,
-            ROW_NUMBER() OVER (ORDER BY l.embedding <=> query_embedding ASC) AS rank_sem
-        FROM libros_sbert l
-        WHERE (filtro_genero IS NULL OR filtro_genero = ANY(l.generos))
-        LIMIT 50
-    ),
-    fusion AS (
-        SELECT 
-            coalesce(c_lex.id, c_sem.id) AS id,
-            c_lex.rank_lex,
-            c_sem.rank_sem,
-            (coalesce(1.0 / (rrf_k + c_lex.rank_lex), 0.0) + 
-             coalesce(1.0 / (rrf_k + c_sem.rank_sem), 0.0))::FLOAT AS score
-        FROM candidatos_lexicos c_lex
-        FULL OUTER JOIN candidatos_semanticos c_sem ON c_lex.id = c_sem.id
+    semantico AS (
+        SELECT c.id, ROW_NUMBER() OVER (ORDER BY c.d, c.id) AS rk
+        FROM (
+            SELECT l.id, l.embedding <=> query_vector AS d
+            FROM libros_sbert l
+            WHERE filtro_genero IS NULL OR filtro_genero = ANY(l.generos)
+            ORDER BY d, l.id
+            LIMIT n_candidatos
+        ) c
     )
-    SELECT 
-        l.id,
-        l.titulo,
-        l.autores,
-        l.generos,
-        l.sinopsis,
-        f.rank_lex,
-        f.rank_sem,
-        f.score AS rrf_score
-    FROM fusion f
-    JOIN libros_sbert l ON l.id = f.id
-    ORDER BY f.score DESC
+    SELECT l.id, l.titulo, lx.rk, se.rk,
+           (coalesce(1.0 / (rrf_k + lx.rk), 0) + coalesce(1.0 / (rrf_k + se.rk), 0))::FLOAT AS score
+    FROM lexico lx
+    FULL OUTER JOIN semantico se ON se.id = lx.id
+    JOIN libros_sbert l ON l.id = coalesce(lx.id, se.id)
+    ORDER BY score DESC, l.id
     LIMIT top_k;
 $$;
