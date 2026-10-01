@@ -912,3 +912,82 @@ Call log:
 2026-08-31 22:20:55,674 [INFO] Dataset consolidado finalizado con éxito en '/tmp/test_robots.csv'. Cantidad de registros válidos: 2
 2026-08-31 22:20:55,674 [INFO] Cerrando navegador...
 2026-08-31 22:20:55,698 [INFO] === PROCESO COMPLETADO EN 38.52 SEGUNDOS (0.64 MINUTOS) ===
+2026-10-01 19:09:26,990 [INFO] robots.txt cargado correctamente desde: https://ww3.lectulandia.co/robots.txt
+2026-10-01 19:09:27,362 [INFO] Iniciando navegador Chromium...
+2026-10-01 19:09:28,766 [INFO] Fase 1: Recopilando URLs de libros desde la categoría: https://ww3.lectulandia.co/genero/clasico/
+2026-10-01 19:09:28,868 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/
+2026-10-01 19:09:30,733 [INFO] Encontrados 24 libros nuevos en la página 1. Total acumulado: 24
+2026-10-01 19:09:30,733 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/2/
+2026-10-01 19:09:32,741 [INFO] Encontrados 24 libros nuevos en la página 2. Total acumulado: 48
+2026-10-01 19:09:32,741 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/3/
+2026-10-01 19:09:34,754 [INFO] Encontrados 24 libros nuevos en la página 3. Total acumulado: 72
+2026-10-01 19:09:34,754 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/4/
+2026-10-01 19:09:36,938 [INFO] Encontrados 24 libros nuevos en la página 4. Total acumulado: 96
+2026-10-01 19:09:36,939 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/5/
+2026-10-01 19:09:38,571 [INFO] Encontrados 24 libros nuevos en la página 5. Total acumulado: 120
+2026-10-01 19:09:38,571 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/6/
+2026-10-01 19:09:40,291 [INFO] Encontrados 24 libros nuevos en la página 6. Total acumulado: 144
+2026-10-01 19:09:40,291 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/7/
+2026-10-01 19:09:42,388 [INFO] Encontrados 24 libros nuevos en la página 7. Total acumulado: 168
+2026-10-01 19:09:42,388 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/8/
+2026-10-01 19:09:44,651 [INFO] Encontrados 24 libros nuevos en la página 8. Total acumulado: 192
+2026-10-01 19:09:44,651 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/9/
+2026-10-01 19:09:46,745 [INFO] Encontrados 24 libros nuevos en la página 9. Total acumulado: 216
+2026-10-01 19:09:46,745 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/10/
+2026-10-01 19:09:48,822 [INFO] Encontrados 24 libros nuevos en la página 10. Total acumulado: 240
+2026-10-01 19:09:48,823 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/11/
+2026-10-01 19:09:50,866 [INFO] Encontrados 24 libros nuevos en la página 11. Total acumulado: 264
+2026-10-01 19:09:50,867 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/12/
+2026-10-01 19:09:53,238 [INFO] Encontrados 24 libros nuevos en la página 12. Total acumulado: 288
+2026-10-01 19:09:53,238 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/13/
+2026-10-01 19:09:55,486 [INFO] Encontrados 24 libros nuevos en la página 13. Total acumulado: 312
+2026-10-01 19:09:55,486 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/14/
+2026-10-01 19:09:57,369 [INFO] Encontrados 24 libros nuevos en la página 14. Total acumulado: 336
+2026-10-01 19:09:57,369 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/15/
+2026-10-01 19:09:58,916 [INFO] Encontrados 24 libros nuevos en la página 15. Total acumulado: 360
+2026-10-01 19:09:58,916 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/16/
+2026-10-01 19:10:01,209 [INFO] Encontrados 14 libros nuevos en la página 16. Total acumulado: 374
+2026-10-01 19:10:01,210 [INFO] Navegando a página del catálogo: https://ww3.lectulandia.co/genero/clasico/page/17/
+2026-10-01 19:10:01,648 [INFO] Fin del catálogo detectado en la página 17 (Error 404 esperado).
+2026-10-01 19:10:01,656 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/tropico-de-capricornio/
+2026-10-01 19:10:05,474 [INFO] Éxito: Se extrajo 'Trópico de Capricornio' por Henry Miller
+2026-10-01 19:10:05,479 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-taberna/
+2026-10-01 19:10:08,365 [INFO] Éxito: Se extrajo 'La taberna' por Émile Zola
+2026-10-01 19:10:08,370 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/romeo-y-julieta/
+2026-10-01 19:10:10,622 [INFO] Éxito: Se extrajo 'Romeo y Julieta' por William Shakespeare
+2026-10-01 19:10:10,627 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/electra/
+2026-10-01 19:10:14,014 [INFO] Éxito: Se extrajo 'Electra' por Sófocles
+2026-10-01 19:10:14,020 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/hermann-y-dorotea/
+2026-10-01 19:10:17,184 [INFO] Éxito: Se extrajo 'Hermann y Dorotea' por Johann Wolfgang von Goethe
+2026-10-01 19:10:17,189 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-aprendiz-de-conspirador/
+2026-10-01 19:10:20,460 [INFO] Éxito: Se extrajo 'El aprendiz de conspirador' por Pío Baroja
+2026-10-01 19:10:20,464 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/cuentos-malevolos/
+2026-10-01 19:10:22,875 [INFO] Éxito: Se extrajo 'Cuentos malévolos' por Clemente Palma
+2026-10-01 19:10:22,878 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/cumbres-borrascosas/
+2026-10-01 19:10:26,362 [INFO] Éxito: Se extrajo 'Cumbres borrascosas' por Emily Brontë
+2026-10-01 19:10:26,365 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-dama-de-las-camelias/
+2026-10-01 19:10:29,486 [INFO] Éxito: Se extrajo 'La dama de las camelias' por Alexandre Dumas (hijo)
+2026-10-01 19:10:29,489 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/edipo-en-colono/
+2026-10-01 19:10:32,603 [INFO] Éxito: Se extrajo 'Edipo en Colono' por Sófocles
+2026-10-01 19:10:32,608 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/los-gozos-y-las-sombras/
+2026-10-01 19:10:35,155 [INFO] Éxito: Se extrajo 'Los gozos y las sombras' por Gonzalo Torrente Ballester
+2026-10-01 19:10:35,161 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/la-corrupcion-de-un-angel/
+2026-10-01 19:10:38,230 [INFO] Éxito: Se extrajo 'La corrupción de un ángel' por Yukio Mishima
+2026-10-01 19:10:38,235 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-doble/
+2026-10-01 19:10:41,098 [INFO] Éxito: Se extrajo 'El doble' por Fiódor Mijáilovich Dostoyevski
+2026-10-01 19:10:41,105 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-ciclo-de-tschai/
+2026-10-01 19:10:44,085 [INFO] Éxito: Se extrajo 'El ciclo de Tschai' por Jack Vance
+2026-10-01 19:10:44,095 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/nieve-de-primavera/
+2026-10-01 19:10:46,534 [INFO] Éxito: Se extrajo 'Nieve de primavera' por Yukio Mishima
+2026-10-01 19:10:46,539 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/conde-cero/
+2026-10-01 19:10:49,198 [INFO] Éxito: Se extrajo 'Conde Cero' por William Gibson
+2026-10-01 19:10:49,204 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/rayuela/
+2026-10-01 19:10:53,362 [INFO] Éxito: Se extrajo 'Rayuela' por Julio Cortázar
+2026-10-01 19:10:53,367 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/david-copperfield/
+2026-10-01 19:10:55,986 [INFO] Éxito: Se extrajo 'David Copperfield' por Charles Dickens
+2026-10-01 19:10:55,992 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/las-ilusiones-perdidas/
+2026-10-01 19:10:59,392 [INFO] Éxito: Se extrajo 'Las ilusiones perdidas' por Honoré de Balzac
+2026-10-01 19:10:59,397 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/bailen/
+2026-10-01 19:11:02,947 [INFO] Éxito: Se extrajo 'Bailén' por Benito Pérez Galdós
+2026-10-01 19:11:02,953 [INFO] Extrayendo metadatos del libro: https://ww3.lectulandia.co/book/el-amante/
+2026-10-01 19:11:06,433 [INFO] Éxito: Se extrajo 'El amante' por Marguerite Duras
