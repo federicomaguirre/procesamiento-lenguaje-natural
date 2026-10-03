@@ -203,8 +203,9 @@ Archivos de soporte:
    ```bash
    python3.12 -m venv .venv-tp2 && source .venv-tp2/bin/activate
    pip install -r requirements-tp2.txt
+   python -m ipykernel install --user --name tp2-pln --display-name "TP2 PLN (Python 3.12)"
    ```
-   (`requirements.txt` tiene las mismas librerías con versiones mínimas, sin fijar.)
+   La última línea registra el entorno como kernel de Jupyter: en VS Code se elige con **Select Kernel → Jupyter Kernel… → TP2 PLN (Python 3.12)**. (`requirements.txt` tiene las mismas librerías con versiones mínimas, sin fijar.)
 2. Copiar `.env.example` como `.env` (`cp .env.example .env`) y reemplazar `ESCRIBIR_CLAVE_AQUI` por la contraseña de la base. El `.env` está en `.gitignore` y no se sube. Usar la de **Session pooler** (puerto 5432): con el Transaction pooler (6543) los `SET` del notebook no se mantienen entre consultas.
    ```bash
    SUPABASE_DB_URL=postgresql://postgres.[REF]:[PASS]@[HOST]:5432/postgres
