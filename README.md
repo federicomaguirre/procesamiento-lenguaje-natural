@@ -199,10 +199,12 @@ Archivos de soporte:
 *   `embeddings/`: vectores de cada modelo en `.npy`. `resultados/metricas.json`: métricas de la última ejecución.
 
 ### ⚙️ Guía de Ejecución Rápida
-1. Instalar dependencias:
+1. Instalar dependencias (Python 3.12). Para reproducir exactamente el entorno con el que se ejecutó el notebook:
    ```bash
-   pip install -r requirements.txt
+   python3.12 -m venv .venv-tp2 && source .venv-tp2/bin/activate
+   pip install -r requirements-tp2.txt
    ```
+   (`requirements.txt` tiene las mismas librerías con versiones mínimas, sin fijar.)
 2. Crear un archivo `.env` en la raíz (está en `.gitignore`, no se sube) con la connection string de Supabase. Usar la de **Session pooler** (puerto 5432): con el Transaction pooler (6543) los `SET` del notebook no se mantienen entre consultas.
    ```bash
    SUPABASE_DB_URL=postgresql://postgres.[REF]:[PASS]@[HOST]:5432/postgres

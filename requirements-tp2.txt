@@ -1,0 +1,19 @@
+# Versiones exactas con las que se ejecutó el notebook del TP2 (Python 3.12).
+# Para el TP1 y uso general alcanza con requirements.txt.
+#   python3.12 -m venv .venv-tp2 && source .venv-tp2/bin/activate
+#   pip install -r requirements-tp2.txt
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.6
+scikit-learn==1.9.1
+gensim==4.4.0
+torch==2.14.1
+transformers==5.18.0
+sentence-transformers==6.1.0
+psycopg2-binary==2.9.13
+pgvector==0.5.0
+python-dotenv==1.2.4
+matplotlib==3.11.2
+seaborn==0.13.2
+ipykernel==7.4.0
+nbconvert==7.17.1
