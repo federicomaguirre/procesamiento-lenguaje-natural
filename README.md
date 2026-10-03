@@ -205,7 +205,7 @@ Archivos de soporte:
    pip install -r requirements-tp2.txt
    ```
    (`requirements.txt` tiene las mismas librerías con versiones mínimas, sin fijar.)
-2. Crear un archivo `.env` en la raíz (está en `.gitignore`, no se sube) con la connection string de Supabase. Usar la de **Session pooler** (puerto 5432): con el Transaction pooler (6543) los `SET` del notebook no se mantienen entre consultas.
+2. Copiar `.env.example` como `.env` (`cp .env.example .env`) y reemplazar `ESCRIBIR_CLAVE_AQUI` por la contraseña de la base. El `.env` está en `.gitignore` y no se sube. Usar la de **Session pooler** (puerto 5432): con el Transaction pooler (6543) los `SET` del notebook no se mantienen entre consultas.
    ```bash
    SUPABASE_DB_URL=postgresql://postgres.[REF]:[PASS]@[HOST]:5432/postgres
    ```
